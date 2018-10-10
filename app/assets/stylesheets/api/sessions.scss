@@ -1,0 +1,84 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.session-box {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 32px;
+  padding-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+form {
+  width: 458px;
+  height: 420px;
+}
+
+h2 {
+  padding: 0px;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 400;
+}
+.login-form {
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 2px;
+  font-family: Helvetica;
+}
+.head-content {
+  height: 86px;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-bottom: 1px solid transparent;
+}
+
+.head-content p {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.login-nav {
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.body-content {
+  border-top: 1px solid rgba(0, 0, 0, .12);
+  font-size: 13px;
+  padding: 16px;
+}
+
+.body-content input {
+  width: 420px;
+  height: 23px;
+  padding: 4px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 3px;
+  background-color: #fafafa;
+  font-size: 16px;
+}
+
+.forgot-pass {
+  color: blue;
+  margin: 0;
+  padding-bottom: 4px;
+  padding-top: 1px;
+
+}
+.check {
+  display: inline;
+  font-weight: 600;
+}
+
+.check input {
+  width:16px;
+  height: 16px;
+}
