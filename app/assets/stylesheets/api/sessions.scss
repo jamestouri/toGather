@@ -1,6 +1,12 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.whole-body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+}
 
 .session-box {
   display: flex;
@@ -12,7 +18,6 @@
   padding-bottom: 16px;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 form {
@@ -30,6 +35,8 @@ h2 {
   border: 1px solid rgba(0, 0, 0, .12);
   border-radius: 2px;
   font-family: Helvetica;
+  background-color: white;
+
 }
 .head-content {
   height: 86px;
@@ -53,6 +60,7 @@ h2 {
   border-top: 1px solid rgba(0, 0, 0, .12);
   font-size: 13px;
   padding: 16px;
+  font-weight: 500px;
 }
 
 .body-content input {
@@ -82,3 +90,18 @@ h2 {
   width:16px;
   height: 16px;
 }
+
+.submit-button input {
+  background-color: rgb(237, 28, 64);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 36px;
+  width: 86px;
+  border: 1px solid transparent;
+}
+
+.submit-button input { cursor: pointer; };

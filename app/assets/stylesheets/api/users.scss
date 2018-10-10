@@ -1,3 +1,93 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.create-box {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 32px;
+  padding-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Helvetica;
+}
+
+.whole-form {
+  width: 460px;
+  height: 800px;
+}
+.form-class {
+  height: 540px;
+}
+
+.title {
+  align-self: center;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+label input {
+  width: 423px;
+  height: 21px;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 3px;
+  background-color: #fafafa;
+  font-size: 16px;
+}
+
+.public-message {
+  font-size: 13px;
+  color: rgba(0, 0, 0, .50);
+}
+.button-submit {
+  display: flex;
+  justify-content: center;
+}
+.button-submit input{
+  background-color: #ed1c40;
+  width: 410px;
+  height: 41px;
+  padding: 8px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  color: white;
+}
+
+.button-submit input { cursor: pointer; };
+
+
+.check-login {
+  border-top: 1px solid rgba(0, 0, 0, .12);
+  display: flex;
+  justify-content: center;
+}
+.check-login p {
+  padding-top: 8px;
+}
+
+.terms {
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  padding-top: 0;
+  margin-top: 0;
+
+}
+
+.terms p {
+  margin-top: 0;
+  text-align: center;
+}
