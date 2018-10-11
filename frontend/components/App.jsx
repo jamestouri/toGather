@@ -6,7 +6,8 @@ import NavContainer from './nav/nav_container'
 import {
   Route,
   Link,
-  HashRouter
+  HashRouter,
+  Switch
 } from 'react-router-dom';
 
 const App = () => (
@@ -14,8 +15,10 @@ const App = () => (
     <header>
       <NavContainer />
     </header>
-    <Route path="/login" component={LoginFormContainer} />
-    <Route path="/signup" component={SignUpFormContainer}/>
+    <Switch>
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignUpFormContainer}/>
+    </Switch>
    </div>
 );
 

@@ -1,5 +1,6 @@
-import {withRouter} from 'react-router-dom';
+import {withRouter, Redirect, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
+import React from 'react';
 
 const Auth = ({component: Component, path, loggedIn, exact}) => (
   <Route path={path} exact={exact} render={(props) => (
