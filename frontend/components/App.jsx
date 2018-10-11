@@ -1,7 +1,8 @@
 import React from 'react';
 import LoginFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
-import {AuthRoute} from '../util/route_util';
+import GroupFormContainer from './group_form/group_form_container';
+import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import NavContainer from './nav/nav_container';
 import Splash from './splash/splash';
 import {
@@ -20,6 +21,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
+      <ProtectedRoute exact path="/create" component={GroupFormContainer}/>
       <Route exact path="/" component={Splash}/>
       <Redirect to={'/'} />
     </Switch>
