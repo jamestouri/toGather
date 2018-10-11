@@ -17,11 +17,15 @@
   display: flex;
   justify-content: center;
   padding-top: 20px;
+  padding-left: 10px;
 }
 
 .start-group-text {
   color: red;
-  text-decoration:none
+  text-decoration:none;
+  border-right: 1px solid rgba(46, 62, 72, 0.12);
+  padding-right: 25px;
+
 }
 
 .log-text {

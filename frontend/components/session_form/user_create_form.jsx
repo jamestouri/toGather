@@ -7,6 +7,10 @@ class CreateUserForm extends React.Component {
       newProps.history.push('/');
     }
   }
+
+  componentDidMount () {
+    this.props.clearErrors();
+  }
   constructor(props) {
     super(props)
     this.state = {
