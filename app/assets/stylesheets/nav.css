@@ -1,3 +1,38 @@
+
+.nav-structure {
+  display: flex;
+  justify-content: space-between;
+  font-family: Helvetica;
+  padding: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .logo-image {
   width: 120px;
+}
+.list-build-out  {
+  display: flex;
+  justify-content: center;
+}
+
+.start-group-text {
+  color: red;
+  text-decoration:none
+}
+
+.log-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration:none
+
+}
+.list-build-out li {
+  list-style: none;
+   border: 1px solid transparent;
+   padding-right: 9px;
+}
+
+.log-text:hover {
+  color: red;
 }
