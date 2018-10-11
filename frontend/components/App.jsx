@@ -2,7 +2,8 @@ import React from 'react';
 import LoginFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import {AuthRoute} from '../util/route_util';
-import NavContainer from './nav/nav_container'
+import NavContainer from './nav/nav_container';
+import Splash from './splash/splash';
 import {
   Route,
   Link,
@@ -18,7 +19,11 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
+      <Route exact path="/" component={Splash}/>
     </Switch>
+    <footer>
+
+    </footer>
    </div>
 );
 

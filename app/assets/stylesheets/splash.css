@@ -1,0 +1,78 @@
+.splash-structure {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 93vh;
+  font-family: Helvetica;
+
+}
+
+.center-text {
+  width: 105%;
+  height: 53%;
+  text-align: center;
+  display: inline-block;
+  color: black;
+  padding-top: 15%;
+  background-image: url(https://nationalinterest.org/sites/default/files/styles/resize-1440/public/main_images/nasa_space_walk.jpg?itok=CrRaVysg);
+  background-size: cover;
+  color: white;
+}
+
+.center-text h2 {
+  font-size: 42px;
+  font-weight: 600;
+  text-shadow: #000 0 0 10px;
+
+}
+
+.center-text h4 {
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 30px;
+  text-shadow: #000 0 0 10px;
+
+}
+
+.splash-signup {
+  padding-left: 112px;
+  padding-right: 112px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: rgb(241, 58, 89);
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-decoration:none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.splash-interests {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.splash-interests li {
+  border: 1px solid transparent;
+  text-decoration:none;
+  padding-right: 20px;
+  list-style: none;
+
+
+}
+
+.link-interest {
+  color: #2e3e48;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration:none;
+  padding-left: 16px;
+  padding-right:16px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: rgba(41, 77, 107, 0.12);
+  border-radius: 3px;
+}
