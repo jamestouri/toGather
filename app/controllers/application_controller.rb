@@ -20,7 +20,9 @@ class ApplicationController < ActionController::Base
     session[:session_token] = user.reset_session_token!
   end
 
-  def require_login
-
+  def require_login!
+    unless current_user
+      render json: ["you need to be logged in"], status: 400  
+    end
   end
 end

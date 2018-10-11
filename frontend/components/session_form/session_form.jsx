@@ -15,12 +15,22 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
     return(e) => {
       this.setState({[field]: e.target.value});
     }
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const user = {
+      email: 'james@james.com',
+      password: '123456'
+    }
+    this.props.login(user);
   }
 
   handleSubmit(e) {
@@ -31,6 +41,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+
     return(
       <ul>
         {this.props.errors.map((error, i) => (
@@ -43,7 +54,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
     return (
       <div className="whole-body">
         <div className="session-box">
@@ -53,7 +63,6 @@ class SessionForm extends React.Component {
                 <img src="https://secure.meetupstatic.com/s/img/09300654065624139187/icon/icon_padlock.gif"/>
               </h2>
               <p className="login-nav">Not registered with us yet? {this.props.navLink}</p>
-              {this.renderErrors()}
             </div>
             <div className="body-content">
               <label>
@@ -74,7 +83,11 @@ class SessionForm extends React.Component {
                 <input type="submit" value="Log In"/>
               </div>
             </div>
+            <label className="demo-structure">
+              <button className="demo-button" onClick={this.demoLogin}>Demo Login</button>
+            </label>
           </form>
+            {this.renderErrors()}
         </div>
       </div>
     )

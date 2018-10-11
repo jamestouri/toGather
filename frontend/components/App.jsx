@@ -8,7 +8,8 @@ import {
   Route,
   Link,
   HashRouter,
-  Switch
+  Switch,
+  Redirect
 } from 'react-router-dom';
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
       <Route exact path="/" component={Splash}/>
+      <Redirect to={'/'} />
     </Switch>
     <footer>
 

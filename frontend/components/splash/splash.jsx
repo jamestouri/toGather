@@ -12,12 +12,12 @@ const Splash = () => {
       </div>
       <div>
         <ul className="splash-interests">
-          <li><Link className="link-interest" to={`/find/hobbies`}>Fly a Rocket</Link></li>
+          <li><Link className="link-interest" to={`/find/hobbies`}>Fly a rocket</Link></li>
           <li><Link className="link-interest" to={`/find/outdoors`}>Shuttle up to Tahoe</Link></li>
-          <li><Link className="link-interest" to={`/find/food`}>Join a Pie Eating Contest</Link></li>
-          <li><Link className="link-interest" to={`/find/dating`}>Find the Mr/Mrs</Link></li>
-          <li><Link className="link-interest" to={`/find/pets`}>Wrestle Pugs</Link></li>
-          <li><Link className="link-interest" to={`/find/social`}>Watch Spongebob</Link></li>
+          <li><Link className="link-interest" to={`/find/food`}>Join a pie eating contest</Link></li>
+          <li><Link className="link-interest" to={`/find/dating`}>Find the mr/mrs</Link></li>
+          <li><Link className="link-interest" to={`/find/pets`}>Wrestle pugs</Link></li>
+          <li><Link className="link-interest" to={`/find/social`}>Watch spongebob</Link></li>
         </ul>
       </div>
     </div>

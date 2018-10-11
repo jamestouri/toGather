@@ -8,7 +8,7 @@
 }
 
 .center-text {
-  width: 105%;
+  width: 101%;
   height: 53%;
   text-align: center;
   display: inline-block;
@@ -23,7 +23,7 @@
   font-size: 42px;
   font-weight: 600;
   text-shadow: #000 0 0 10px;
-
+  padding: 23px;
 }
 
 .center-text h4 {
@@ -31,7 +31,6 @@
   font-weight: 500;
   padding-bottom: 30px;
   text-shadow: #000 0 0 10px;
-
 }
 
 .splash-signup {
@@ -48,6 +47,10 @@
   border-radius: 3px;
 }
 
+.splash-signup:hover {
+  background-color: #e81035;
+}
+
 .splash-interests {
   display: flex;
   justify-content: center;
@@ -60,7 +63,6 @@
   text-decoration:none;
   padding-right: 20px;
   list-style: none;
-
 
 }
 
@@ -75,4 +77,8 @@
   padding-bottom: 6px;
   background-color: rgba(41, 77, 107, 0.12);
   border-radius: 3px;
+}
+
+.link-interest:hover {
+  background-color: rgba(41, 77, 107, 0.17);
 }

@@ -49,8 +49,6 @@ class CreateUserForm extends React.Component {
           <form onSubmit={this.handleSubmit} className="form-class">
             <section>
               <h1 className="title">Sign up</h1>
-              {this.renderErrors()}
-
             </section>
             <label>
               Email address
@@ -92,12 +90,16 @@ class CreateUserForm extends React.Component {
                 in our <a href="#">Privacy Policy</a>, and <a href="#">Cookie Policy</a>.
               </p>
             </div>
+            <label className="demo-structure">
+              <button className="demo-button" onClick={this.demoLogin}>Demo Login</button>
+            </label>
           </form>
           <label className="check-login">
             <p>
               Already a member? {this.props.navLink}
             </p>
           </label>
+          {this.renderErrors()}
         </div>
       </div>
     )
