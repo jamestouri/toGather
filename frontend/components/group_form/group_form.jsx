@@ -51,9 +51,9 @@ class CreateGroup extends React.Component {
               </div>
             </div>
 
-            <div className="topic-input">
+            <div className="location-input">
               <img className="image-style" src="https://secure.meetupstatic.com/s/img/322408653975454564695/start_v2/textBubbles.svg"/>
-              <div className="topic-input-text">
+              <div className="location-input-text">
                 <h6>STEP 2 OF 4</h6>
                 <h2>What will your Group be about?</h2>
                 <input type="text"
@@ -65,9 +65,9 @@ class CreateGroup extends React.Component {
               </div>
             </div>
 
-            <div className="name-input">
+            <div className="location-input">
               <img className="image-style" src="https://secure.meetupstatic.com/s/img/545971442246927/start_v2/tag.svg"/>
-              <div className="about-input-text">
+              <div className="location-input-text">
                 <h6>STEP 3 OF 4</h6>
                 <h2>What will your Group Name Be?</h2>
                 <input type="text"
@@ -76,7 +76,7 @@ class CreateGroup extends React.Component {
                   placeholder= "Example: Hikers Unite"
                   />
 
-                <h2>Describe who should join, and what your Group will do</h2>
+                <h2 className="input-textarea">Describe who should join, and what your Group will do</h2>
                 <textarea value={this.state.about}
                           onChange={this.update('about')}
                           />
@@ -84,14 +84,22 @@ class CreateGroup extends React.Component {
               </div>
             </div>
 
-            <div className="final-input">
-              <img className="final-style" src="https://secure.meetupstatic.com/s/img/533695931247066883484/start_v2/people.svg"/>
-              <div className="final-input-text">
+            <div className="location-input">
+              <img className="image-style" src="https://secure.meetupstatic.com/s/img/533695931247066883484/start_v2/people.svg"/>
+              <div className="location-input-text">
                 <h6>STEP 4 OF 4</h6>
-                <h2>What will your Group be about?</h2>
+                <h2>What it means to have a group</h2>
+                <ul>
+                  <li>Real, in-person conversations</li>
+                  <li>Open and honest intentions</li>
+                  <li>Always safe and respectful</li>
+                  <li>Put your members first</li>
+                </ul>
+                <p>We review all Meetups based on our <a href="#">Community Guidelines.</a></p>
+
               </div>
             </div>
-            <input type="submit" value="Create Group" />
+            <input className="button-create" type="submit" value="Create Group" />
           </form>
         </div>
       </div>

@@ -1,24 +1,24 @@
 
 
 export const fetchGroups = groups => {
-  $.ajax({
+  return $.ajax({
     method: 'GET',
     url: 'api/groups',
-    groups
+    data: {groups}
   });
 };
 
 export const fetchGroup = id => {
-  $.ajax({
+  return $.ajax({
     method: 'GET',
     url: `api/groups/${id}`
   });
 };
 
 export const createGroup = group => {
-  $.ajax({
+  return $.ajax({
     method: 'POST',
     url: 'api/groups',
-    data: group
+    data: {group}
   })
 }

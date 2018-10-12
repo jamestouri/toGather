@@ -25,20 +25,24 @@
   width: 100%;
   font-family: Helvetica;
   padding-top: 24px;
+  height: 1400px;
 }
 
 .group-form {
   margin: 0 auto;
   width: 840px;
+
 }
 
 .location-input {
   padding-top: 24px;
   padding-left: 16px;
   padding-right: 16px;
-  padding-bottom: 8px;
+  padding-bottom: 40px;
   display: flex;
   justify-content: flex-start;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 25px;
 }
 
 .location-input-text h6{
@@ -48,9 +52,9 @@
   padding-bottom: 10px;
 }
 
-.location-input-text h1{
+.location-input-text h2{
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 540;
 }
 
 .location-input-text input {
@@ -76,6 +80,21 @@
   border-radius: 3px;
 }
 
+.location-input-text textarea {
+  margin-top: 15px;
+  padding-left: 8px;
+  width: 688px;
+  height: 184px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.input-textarea {
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
 .image-style {
   height:55px;
   width: 55px;
@@ -83,4 +102,30 @@
   padding-right: 25px;
   padding-top: 0px;
   padding-bottom: 8px;
+}
+
+.location-input-text ul {
+  list-style-type: inherit;
+}
+
+.location-input-text ul li{
+  margin-top: 8px;
+}
+
+.location-input-text p {
+  margin-top: 10px;
+}
+
+.button-create {
+  border: 1px solid transparent;
+  background-color: #ed1c40;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 34px;
+  margin-top: 18px;
+  border-radius: 3px;
+  margin-left: 110px;
 }
