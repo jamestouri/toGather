@@ -21,6 +21,7 @@ class CreateGroup extends React.Component {
     }
     this.updateLocation = this.updateLocation.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
     this.options= {
      types: ['(cities)'],
      componentRestrictions: {country: "us"}
@@ -32,7 +33,7 @@ class CreateGroup extends React.Component {
     // debugger
     return(e) => {
       // debugger
-      this.setState({[field]: e});
+      this.setState({location: e});
     }
   }
 
@@ -71,6 +72,14 @@ class CreateGroup extends React.Component {
 
   }
 
+  handleLocation(suggestion) {
+    this.setState({
+      location: suggestion
+    })
+    let x = document.getElementById('auto-input');
+    x.classList.add('hidden');
+  }
+
   render() {
     return (
       <div>
@@ -106,7 +115,7 @@ class CreateGroup extends React.Component {
                  placeholder: 'Pick your location',
                })}
              />
-             <div className="autocomplete-dropdown-container">
+             <div className="autocomplete-dropdown-container" id='auto-input'>
                {loading && <div>Loading...</div>}
                {suggestions.map(suggestion => {
                  const className = suggestion.active
@@ -122,6 +131,8 @@ class CreateGroup extends React.Component {
                        className,
                        style,
                      })}
+                     className="auto-suggestions"
+                     onClick={() => this.handleLocation(suggestion.description)}
                    >
                      <span>{suggestion.description}</span>
                    </div>

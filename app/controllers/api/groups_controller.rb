@@ -16,7 +16,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-
+    @group = Group.find_by(params[:id])
   end
 
   def destroy
