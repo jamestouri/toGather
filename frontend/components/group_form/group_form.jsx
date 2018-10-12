@@ -59,15 +59,14 @@ class CreateGroup extends React.Component {
 
 
 
-  visibility(question) {
+  visibility(question, scroll, givenButton) {
     let x = document.getElementById(question);
-
     x.classList.remove('hidden');
 
-    let button = document.getElementById('given-button');
+    let button = document.getElementById(givenButton);
     button.classList.add('hidden');
 
-    document.getElementById('service').scrollIntoView();
+    document.getElementById(scroll).scrollIntoView();
 
 
   }
@@ -139,7 +138,7 @@ class CreateGroup extends React.Component {
 
 
 
-         <button id="given-button" onClick={()=>this.visibility('question-2')}>Next</button>
+         <button id="buttonOne" onClick={()=>this.visibility('question-2', 'service', 'buttonOne')}>Next</button>
 
               </div>
             </div>
@@ -154,43 +153,46 @@ class CreateGroup extends React.Component {
                     onChange={this.update('category')}
                     placeholder= "Search for a Topic"
                     />
-                  <button>Next</button>
+                  <button id="button-two" onClick={()=>this.visibility('question-3', 'naming', 'button-two')}>Next</button>
+                </div>
+              </div>
+            </div>
+            <div id='naming'>
+              <div id="question-3" className="location-input hidden">
+                <img className="image-style" src="https://secure.meetupstatic.com/s/img/545971442246927/start_v2/tag.svg"/>
+                <div className="location-input-text">
+                  <h6>STEP 3 OF 4</h6>
+                  <h2>What will your Group Name Be?</h2>
+                  <input type="text"
+                    value={this.state.title}
+                    onChange={this.update('title')}
+                    placeholder= "Example: Hikers Unite"
+                    />
+
+                  <h2 className="input-textarea">Describe who should join, and what your Group will do</h2>
+                  <textarea value={this.state.about}
+                    onChange={this.update('about')}
+                    />
+                  <button id="buttonThree" onClick={()=>this.visibility('question-4', 'terms', "buttonThree")}>Next</button>
                 </div>
               </div>
             </div>
 
-            <div className="location-input">
-              <img className="image-style" src="https://secure.meetupstatic.com/s/img/545971442246927/start_v2/tag.svg"/>
-              <div className="location-input-text">
-                <h6>STEP 3 OF 4</h6>
-                <h2>What will your Group Name Be?</h2>
-                <input type="text"
-                  value={this.state.title}
-                  onChange={this.update('title')}
-                  placeholder= "Example: Hikers Unite"
-                  />
+            <div id="terms">
+              <div id="question-4" className="location-input hidden">
+                <img className="image-style" src="https://secure.meetupstatic.com/s/img/533695931247066883484/start_v2/people.svg"/>
+                <div className="location-input-text">
+                  <h6>STEP 4 OF 4</h6>
+                  <h2>What it means to have a group</h2>
+                  <ul>
+                    <li>Real, in-person conversations</li>
+                    <li>Open and honest intentions</li>
+                    <li>Always safe and respectful</li>
+                    <li>Put your members first</li>
+                  </ul>
+                  <p>We review all Meetups based on our <a href="#">Community Guidelines.</a></p>
 
-                <h2 className="input-textarea">Describe who should join, and what your Group will do</h2>
-                <textarea value={this.state.about}
-                          onChange={this.update('about')}
-                          />
-              <button id='given-button'>Next</button>
-              </div>
-            </div>
-
-            <div className="location-input">
-              <img className="image-style" src="https://secure.meetupstatic.com/s/img/533695931247066883484/start_v2/people.svg"/>
-              <div className="location-input-text">
-                <h6>STEP 4 OF 4</h6>
-                <h2>What it means to have a group</h2>
-                <ul>
-                  <li>Real, in-person conversations</li>
-                  <li>Open and honest intentions</li>
-                  <li>Always safe and respectful</li>
-                  <li>Put your members first</li>
-                </ul>
-                <p>We review all Meetups based on our <a href="#">Community Guidelines.</a></p>
-
+                </div>
               </div>
             </div>
             <input className="button-create" type="submit" value="Create Group" />

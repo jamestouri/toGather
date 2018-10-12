@@ -26,6 +26,7 @@ const App = () => (
       <ProtectedRoute exact path="/create" component={GroupFormContainer}/>
       <ProtectedRoute exact path="/find" component={GroupFindContainer}/>
       <Route exact path="/" component={Splash}/>
+      <Redirect to={'/'} />
     </Switch>
     <footer>
 

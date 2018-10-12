@@ -7,10 +7,19 @@ class FindGroup extends React.Component {
     super(props);
   }
 
+  numberOf(events = 0, groups = 0) {
+    return [events, groups];
+  }
+
 
   render() {
+
     return (
-      <h1>Hi</h1>
+      <div>
+        <div className="body-header">
+
+        </div>
+      </div>
     )
   }
 }
