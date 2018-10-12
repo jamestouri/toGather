@@ -46,6 +46,15 @@ class CreateUserForm extends React.Component {
     )
   }
 
+  demoLogin(e) {
+    e.preventDefault();
+    const user = {
+      email: 'james@james.com',
+      password: '123456'
+    }
+    this.props.login(user);
+  }
+
   render() {
     return (
       <div className='create-box'>

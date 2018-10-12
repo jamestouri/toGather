@@ -17,7 +17,8 @@ class FindGroup extends React.Component {
     return (
       <div>
         <div className="body-header">
-
+          <h2>Find a Meetup</h2>
+          <h6>in your groups</h6>
         </div>
       </div>
     )
