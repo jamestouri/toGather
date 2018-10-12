@@ -25,7 +25,7 @@
   width: 100%;
   font-family: Helvetica;
   padding-top: 24px;
-  height: 1400px;
+  height: 1700px;
 }
 
 .group-form {
@@ -37,7 +37,7 @@
 
 
 
-.location-input-first {
+.location-input {
   padding-top: 24px;
   padding-left: 16px;
   padding-right: 16px;
@@ -53,7 +53,8 @@
 
 .autocomplete-dropdown-container {
   height: 100px;
-
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 
@@ -97,11 +98,14 @@
   font-size: 16px;
   font-weight: 600;
   color: white;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 25px;
+  padding-right: 25px;
   height: 34px;
-  margin-top: 18px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: 3px;
+  text-decoration: none;
+
 }
 
 .location-input-text textarea {
@@ -152,4 +156,9 @@
   margin-top: 18px;
   border-radius: 3px;
   margin-left: 110px;
+}
+
+
+.hidden {
+  visibility: hidden;
 }

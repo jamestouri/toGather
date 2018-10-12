@@ -58,13 +58,18 @@ class CreateGroup extends React.Component {
 
 
 
+
   visibility(question) {
     let x = document.getElementById(question);
-    if (x.style.display === "none") {
-        x.style.display = "flex";
-    } else {
-        x.style.display = "none";
-    }
+
+    x.classList.remove('hidden');
+
+    let button = document.getElementById('given-button');
+    button.classList.add('hidden');
+
+    document.getElementById('service').scrollIntoView();
+
+
   }
 
   render() {
@@ -76,11 +81,15 @@ class CreateGroup extends React.Component {
         </div>
         <div className="group-create">
           <form className="group-form" onSubmit={this.handleSubmit}>
-            <div className="location-input-first">
+            <div className="location-input">
               <img className="image-style" src="https://secure.meetupstatic.com/s/img/5771697722992842330638/start_v2/globe.svg"/>
               <div className="location-input-text">
                 <h6>STEP 1 OF 4</h6>
                 <h2>What's your new Group&#39;s Hometown?</h2>
+
+
+
+
 
 
 
@@ -130,23 +139,23 @@ class CreateGroup extends React.Component {
 
 
 
+         <button id="given-button" onClick={()=>this.visibility('question-2')}>Next</button>
 
-
-                <button onClick={()=>this.visibility('question-2')} id="question-2">Next</button>
               </div>
             </div>
-
-            <div id="question-2" className="location-input">
-              <img className="image-style" src="https://secure.meetupstatic.com/s/img/322408653975454564695/start_v2/textBubbles.svg"/>
-              <div className="location-input-text">
-                <h6>STEP 2 OF 4</h6>
-                <h2>What category is your Group in?</h2>
-                <input type="text"
-                  value={this.state.category}
-                  onChange={this.update('category')}
-                  placeholder= "Search for a Topic"
-                  />
-                <button>Next</button>
+            <div id="service">
+              <div id="question-2" className="location-input hidden">
+                <img className="image-style" src="https://secure.meetupstatic.com/s/img/322408653975454564695/start_v2/textBubbles.svg"/>
+                <div className="location-input-text">
+                  <h6>STEP 2 OF 4</h6>
+                  <h2>What category is your Group in?</h2>
+                  <input type="text"
+                    value={this.state.category}
+                    onChange={this.update('category')}
+                    placeholder= "Search for a Topic"
+                    />
+                  <button>Next</button>
+                </div>
               </div>
             </div>
 
@@ -165,7 +174,7 @@ class CreateGroup extends React.Component {
                 <textarea value={this.state.about}
                           onChange={this.update('about')}
                           />
-                <button>Next</button>
+              <button id='given-button'>Next</button>
               </div>
             </div>
 
