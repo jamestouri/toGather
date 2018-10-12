@@ -34,6 +34,24 @@
 
 }
 
+
+
+
+.location-input-first {
+  padding-top: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 25px;
+}
+
+
+
+
+
 .location-input {
   padding-top: 24px;
   padding-left: 16px;

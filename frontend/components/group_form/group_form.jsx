@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 
 
 class CreateGroup extends React.Component {
+
+
   constructor(props) {
     super(props)
     this.state = {
@@ -24,8 +26,17 @@ class CreateGroup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const group = Object.assign({}, this.state);
-    this.props.createGroup(group);
+    this.props.createGroup(group).then(() => this.props.history.push('/show'));
 
+  }
+
+  visibility(question) {
+    let x = document.getElementById(question);
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
   }
 
   render() {
@@ -37,7 +48,7 @@ class CreateGroup extends React.Component {
         </div>
         <div className="group-create">
           <form className="group-form" onSubmit={this.handleSubmit}>
-            <div className="location-input">
+            <div className="location-input-first">
               <img className="image-style" src="https://secure.meetupstatic.com/s/img/5771697722992842330638/start_v2/globe.svg"/>
               <div className="location-input-text">
                 <h6>STEP 1 OF 4</h6>
@@ -47,11 +58,11 @@ class CreateGroup extends React.Component {
                   onChange={this.update('location')}
                   placeholder= "Enter location"
                   />
-                <button>Next</button>
+                <button onClick={()=>this.visibility('question-2')} id="question-2">Next</button>
               </div>
             </div>
 
-            <div className="location-input">
+            <div id="question-2" className="location-input">
               <img className="image-style" src="https://secure.meetupstatic.com/s/img/322408653975454564695/start_v2/textBubbles.svg"/>
               <div className="location-input-text">
                 <h6>STEP 2 OF 4</h6>

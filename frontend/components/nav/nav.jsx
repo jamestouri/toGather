@@ -14,7 +14,6 @@ const loggedIn = ({currentUser, logout, location}) => {
     return (
       <ul className="list-build-out">
         <li><Link className="start-group-text" to={`/create`}>Start new group</Link></li>
-
         <li><Link className="log-text" to={`/login`}>Log in</Link></li>
         <li><Link className="log-text" to={`/signup`}>Sign up</Link></li>
       </ul>
