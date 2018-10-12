@@ -51,6 +51,12 @@
 
 
 
+.autocomplete-dropdown-container {
+  height: 100px;
+
+}
+
+
 
 .location-input {
   padding-top: 24px;

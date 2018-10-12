@@ -5,6 +5,8 @@ import GroupFormContainer from './group_form/group_form_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import NavContainer from './nav/nav_container';
 import Splash from './splash/splash';
+import GroupFindContainer from './group_find/group_find_container';
+
 import {
   Route,
   Link,
@@ -22,6 +24,7 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
       <ProtectedRoute exact path="/create" component={GroupFormContainer}/>
+      <ProtectedRoute exact path="/find" component={GroupFindContainer}/>
       <Route exact path="/" component={Splash}/>
       <Redirect to={'/'} />
     </Switch>

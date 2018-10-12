@@ -1,6 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
+import PlacesAutocomplete from 'react-places-autocomplete';
+import {
+ geocodeByAddress,
+ geocodeByPlaceId,
+ getLatLng,
+} from 'react-places-autocomplete';
 
 class CreateGroup extends React.Component {
 
@@ -14,7 +19,21 @@ class CreateGroup extends React.Component {
       category: '',
       user_id: props.currentUser.id
     }
+    this.updateLocation = this.updateLocation.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.options= {
+     types: ['(cities)'],
+     componentRestrictions: {country: "us"}
+    };
+  }
+
+
+  updateLocation(field) {
+    // debugger
+    return(e) => {
+      // debugger
+      this.setState({[field]: e});
+    }
   }
 
   update(field) {
@@ -27,8 +46,17 @@ class CreateGroup extends React.Component {
     e.preventDefault();
     const group = Object.assign({}, this.state);
     this.props.createGroup(group).then(() => this.props.history.push('/show'));
-
   }
+
+
+  handleSelect(address) {
+    geocodeByAddress(address)
+      .then(results => getLatLng(results[0]))
+      .then(latLng => console.log('Success', latLng))
+      .catch(error => console.error('Error', error));
+  };
+
+
 
   visibility(question) {
     let x = document.getElementById(question);
@@ -53,11 +81,57 @@ class CreateGroup extends React.Component {
               <div className="location-input-text">
                 <h6>STEP 1 OF 4</h6>
                 <h2>What's your new Group&#39;s Hometown?</h2>
-                <input type="text"
-                  value={this.state.location}
-                  onChange={this.update('location')}
-                  placeholder= "Enter location"
-                  />
+
+
+
+          <PlacesAutocomplete
+            value={this.state.location}
+            onChange={this.updateLocation('location')}
+            onSelect={this.handleSelect}
+
+            type="text"
+       >
+         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+           <div>
+             <input
+               {...getInputProps({
+                 placeholder: 'Pick your location',
+               })}
+             />
+             <div className="autocomplete-dropdown-container">
+               {loading && <div>Loading...</div>}
+               {suggestions.map(suggestion => {
+                 const className = suggestion.active
+                   ? 'suggestion-item--active'
+                   : 'suggestion-item';
+                 // inline style for demonstration purpose
+                 const style = suggestion.active
+                   ? { backgroundColor: '#fafafa', cursor: 'pointer' }
+                   : { backgroundColor: '#ffffff', cursor: 'pointer' };
+                 return (
+                   <div
+                     {...getSuggestionItemProps(suggestion, {
+                       className,
+                       style,
+                     })}
+                   >
+                     <span>{suggestion.description}</span>
+                   </div>
+                 );
+               })}
+             </div>
+           </div>
+         )}
+         </PlacesAutocomplete>
+
+
+
+
+
+
+
+
+
                 <button onClick={()=>this.visibility('question-2')} id="question-2">Next</button>
               </div>
             </div>
@@ -66,7 +140,7 @@ class CreateGroup extends React.Component {
               <img className="image-style" src="https://secure.meetupstatic.com/s/img/322408653975454564695/start_v2/textBubbles.svg"/>
               <div className="location-input-text">
                 <h6>STEP 2 OF 4</h6>
-                <h2>What will your Group be about?</h2>
+                <h2>What category is your Group in?</h2>
                 <input type="text"
                   value={this.state.category}
                   onChange={this.update('category')}
