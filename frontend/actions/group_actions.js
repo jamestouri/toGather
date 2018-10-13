@@ -3,17 +3,18 @@ import * as GroupAPIUtil from '../util/group_api_util';
 export const RECEIVE_GROUPS = 'RECEIVE_GROUPS';
 export const RECEIVE_GROUP = 'RECEIVE_GROUP';
 
-const receiveGroups = groups => {
+const receiveGroups = payload => {
   return {
     type: RECEIVE_GROUPS,
-    groups,
+    payload
   }
 }
 
-const receiveGroup = group => {
+const receiveGroup = ({group, users}) => {
   return {
     type: RECEIVE_GROUP,
-    group
+    group,
+    users
   }
 }
 

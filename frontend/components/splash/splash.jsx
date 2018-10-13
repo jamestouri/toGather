@@ -7,7 +7,7 @@ const Splash = () => {
     <div className="splash-structure">
       <div className="center-text">
         <h2>What do you love?</h2>
-        <h4>Do more of it with togather</h4>
+        <h4>Do more of it with ToGather</h4>
         <Link className="splash-signup" to={`/signup`}>Sign Up</Link>
       </div>
       <div>

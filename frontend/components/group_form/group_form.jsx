@@ -96,11 +96,6 @@ class CreateGroup extends React.Component {
                 <h2>What's your new Group&#39;s Hometown?</h2>
 
 
-
-
-
-
-
           <PlacesAutocomplete
             value={this.state.location}
             onChange={this.updateLocation('location')}
@@ -142,12 +137,6 @@ class CreateGroup extends React.Component {
            </div>
          )}
          </PlacesAutocomplete>
-
-
-
-
-
-
 
          <button id="buttonOne" onClick={()=>this.visibility('question-2', 'service', 'buttonOne')}>Next</button>
 

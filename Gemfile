@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 
+gem 'aws-sdk-s3'
+
 gem 'rails_12factor'
 
 gem 'bcrypt', '~> 3.1.7'
