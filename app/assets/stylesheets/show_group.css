@@ -175,8 +175,10 @@
 .about-section {
   background-color: #f6f7f8;
   text-align: left;
-  margin-right: 12%;
+  margin-right: 2%;
   margin-top: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -234,4 +236,27 @@
 
   width: 85px;
   height: 60px;
+}
+
+.upcoming-events {
+  margin-left: 100px;
+  padding-top: 10px;
+}
+
+.event-button {
+  width: 162px;
+  height: 40px;
+  padding-left: 26px;
+  padding-right: 26px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #00a2c7;
+  font-size: 14px;
+  color: white;
+  margin-left: 15px;
+  cursor: pointer;
+  text-decoration: none;
+
 }

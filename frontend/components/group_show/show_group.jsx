@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import GroupHomeHeader from './group_header_item';
 import GroupTabsSelection from './group_tabs_items';
 import AboutGroupSection from './about_group_section';
+
 import { StickyContainer, Sticky } from 'react-sticky';
 // Go back and work on this later
 
@@ -31,7 +32,8 @@ class ShowGroup extends React.Component {
             />
 
       <GroupTabsSelection
-        user={this.props.user}
+        session={this.props.session_user}
+        group={this.props.group}
         />
       <AboutGroupSection
             group={this.props.group}

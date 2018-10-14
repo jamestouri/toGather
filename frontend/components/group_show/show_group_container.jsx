@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
     return{group};
   }
   const user = state.entities.users[group.user_id];
-  return {group, user};
+  const session_user = state.session.id;
+  return {group, user, session_user};
 };
 
 const mapDispatchToProps = dispatch => {

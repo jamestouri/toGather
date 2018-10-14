@@ -13,6 +13,6 @@ export const joinGroup = data => {
 export const leaveGroup = () => {
   return $.ajax({
     method: 'DELETE',
-    url: 'api/join_groups'
+    url: '/api/join_groups'
   })
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 // Add Event part here
 
 const AboutGroupSection = ({group, user}) => {
@@ -21,6 +21,8 @@ const AboutGroupSection = ({group, user}) => {
           </div>
         </div>
         <div className="upcoming-events">
+          <Link className="event-button"
+            to={`/api/new_event`}>Create Event</Link>
         </div>
       </div>
   )
