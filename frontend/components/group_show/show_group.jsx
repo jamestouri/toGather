@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GroupHomeHeader from './group_header_item';
+import GroupTabsSelection from './group_tabs_items';
+import AboutGroupSection from './about_group_section';
+import { StickyContainer, Sticky } from 'react-sticky';
+// Go back and work on this later
 
 class ShowGroup extends React.Component {
 
@@ -13,6 +17,7 @@ class ShowGroup extends React.Component {
   }
 
 
+
   render() {
     if(!this.props.group) {
       return null
@@ -22,7 +27,15 @@ class ShowGroup extends React.Component {
       <GroupHomeHeader
             key={this.props.group.id}
             group = {this.props.group}
-            user = {this.props.user} />
+            user = {this.props.user}
+            />
+
+      <GroupTabsSelection
+        user={this.props.user}
+        />
+      <AboutGroupSection
+            group={this.props.group}
+            user = {this.props.user}/>
     </div>
 
     )

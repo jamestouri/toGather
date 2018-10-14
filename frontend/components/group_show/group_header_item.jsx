@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const HavePhoto = ({group}) => {
   const style = {backgroundColor: 'rgb(236, 236, 236)'};

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_221524) do
+ActiveRecord::Schema.define(version: 2018_10_14_034038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(version: 2018_10_12_221524) do
     t.integer "user_id", null: false
     t.index ["category"], name: "index_groups_on_category"
     t.index ["title"], name: "index_groups_on_title"
+  end
+
+  create_table "join_groups", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.index ["group_id"], name: "index_join_groups_on_group_id"
+    t.index ["user_id", "group_id"], name: "index_join_groups_on_user_id_and_group_id", unique: true
+    t.index ["user_id"], name: "index_join_groups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
