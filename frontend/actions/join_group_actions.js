@@ -4,10 +4,11 @@ export const RECEIVE_JOIN_GROUP = 'RECEIVE_JOIN_GROUP';
 export const REMOVE_JOIN_GROUP = 'REMOVE_JOIN_GROUP';
 
 
-const receiveJoinGroup = join_group => {
+const receiveJoinGroup = ({group, user}) => {
   return {
     type: RECEIVE_JOIN_GROUP,
-    join_group,
+    group,
+    user,
   }
 }
 
@@ -19,13 +20,13 @@ const removeJoinGroup = id => {
 }
 
 
-export const createJoinGroup = data => dispatch => {
-  return JoinGroupAPIUtil.createJoinGroup(data)
+export const joinGroup = data => dispatch => {
+  return JoinGroupAPIUtil.joinGroup(data)
     .then(join_group => dispatch(receiveJoinGroup(join_group)));
 }
 
 
-export const deleteJoinGroup = () => dispatch => {
-  return JoinGroupAPIUtil.deleteJoinGroup()
+export const leaveGroup = () => dispatch => {
+  return JoinGroupAPIUtil.leaveGroup()
     .then(id => dispatch(receiveJoinGroup(id)));
 }

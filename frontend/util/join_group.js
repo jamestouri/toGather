@@ -1,7 +1,7 @@
 
 
 
-export const createJoinGroup = data => {
+export const joinGroup = data => {
   return $.ajax({
     method: 'POST',
     url: '/api/join_groups',
@@ -10,7 +10,7 @@ export const createJoinGroup = data => {
 }
 
 
-export const deleteJoinGroup = () => {
+export const leaveGroup = () => {
   return $.ajax({
     method: 'DELETE',
     url: 'api/join_groups'
