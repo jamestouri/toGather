@@ -30,9 +30,7 @@ class CreateGroup extends React.Component {
 
 
   updateLocation(field) {
-    // debugger
     return(e) => {
-      // debugger
       this.setState({location: e});
     }
   }

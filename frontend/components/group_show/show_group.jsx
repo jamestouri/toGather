@@ -1,27 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import GroupHomeHeader from './group_header_item';
 
 class ShowGroup extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.groupId)
   }
-  constructor(props) {
-    super(props);
 
-  }
+
   render() {
     if(!this.props.group) {
       return null
     }
-
     return (
-      <div>
-        <h1>{this.props.group.title}</h1>
-        <h1>{this.props.group.category}</h1>
-      </div>
+    <div className="show-group-structure">
+      <GroupHomeHeader
+            key={this.props.group.id}
+            group = {this.props.group}
+            user = {this.props.user} />
+    </div>
 
     )
   }
 }
 
-export default ShowGroup
+export default ShowGroup;
