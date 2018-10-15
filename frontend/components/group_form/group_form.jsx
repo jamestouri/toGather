@@ -40,6 +40,7 @@ class CreateGroup extends React.Component {
   }
 
   update(field) {
+    console.log(this.state);
     return(e) => {
       this.setState({[field]: e.target.value});
     }
@@ -54,6 +55,7 @@ class CreateGroup extends React.Component {
     // add our coordinates
     formData.append('group[about]', this.state.about);
     formData.append('group[category]', this.state.category);
+    formData.append('group[user_id]', this.state.user_id);
     if (this.state.imageFile) {
       formData.append('group[image]', this.state.imageFile);
     }

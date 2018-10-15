@@ -1,0 +1,66 @@
+.next-event-structure {
+  width: 959px;
+  height: 465px;
+
+}
+
+.next-event-mark {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.next-event-mark h1 {
+  text-align: left;
+  margin: 0;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.next-event-mark h4 {
+  text-align: right;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.next-event-description {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: white;
+  height: 418px;
+  width: 100%;
+}
+
+.next-event-calendar {
+  height: 100%;
+  width: 54px;
+}
+
+.next-event-card {
+  width: 395px;
+  padding-left: 15px;
+}
+
+.date-for-event-full {
+  font-size: 14px;
+  color: rgba(46, 62, 72, .6);
+}
+
+.next-event-card h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.next-event-card-profile {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.next-event-actions {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 278px;
+  height: 300px;
+}

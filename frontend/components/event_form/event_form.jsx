@@ -17,11 +17,11 @@ class EventForm extends React.Component {
         title: '',
         location: '',
         body: '',
-        datetime: '',
+        date_time: '',
         imageFile: undefined,
         imageUrl: undefined,
         user_id: props.user.id,
-        // group_id: props.group.id
+        group_id: this.props.location.state.groupId
       }
       this.updateLocation = this.updateLocation.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,6 +37,7 @@ class EventForm extends React.Component {
     }
 
     update(field) {
+      console.log(this.state);
       return(e) => {
         this.setState({[field]: e.target.value});
       }
@@ -50,7 +51,7 @@ class EventForm extends React.Component {
       formData.append('group[title]', this.state.title);
       formData.append('group[location]', this.state.location);
       // add our coordinates
-      formData.append('group[about]', this.state.about);
+      formData.append('group[body]', this.state.body);
       formData.append('group[category]', this.state.category);
       if (this.state.imageFile) {
         formData.append('group[image]', this.state.imageFile);
@@ -168,8 +169,8 @@ class EventForm extends React.Component {
                   <h6>STEP 2 OF 5</h6>
                   <h2>When will your Event Happen?</h2>
                   <input type="datetime-local"
-                    value={this.state.datetime}
-                    onChange={this.update('datetime')}
+                    value={this.state.date_time}
+                    onChange={this.update('date_time')}
                     />
                   <button id="button-two" onClick={()=>this.visibility('question-3', 'naming', 'button-two')}>Next</button>
                 </div>
@@ -189,7 +190,7 @@ class EventForm extends React.Component {
 
                   <h2 className="input-textarea">Describe who should join, and what your Group will do</h2>
                   <textarea value={this.state.body}
-                    onChange={this.update('about')}
+                    onChange={this.update('body')}
                     />
 
                 </div>

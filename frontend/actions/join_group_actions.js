@@ -4,11 +4,10 @@ export const RECEIVE_JOIN_GROUP = 'RECEIVE_JOIN_GROUP';
 export const REMOVE_JOIN_GROUP = 'REMOVE_JOIN_GROUP';
 
 
-const receiveJoinGroup = ({group, user}) => {
+const receiveJoinGroup = (data) => {
   return {
     type: RECEIVE_JOIN_GROUP,
-    group,
-    user,
+    data
   }
 }
 

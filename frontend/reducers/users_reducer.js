@@ -13,7 +13,11 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_GROUP:
       return merge({}, state, {[action.user.id]: action.user});
     case RECEIVE_JOIN_GROUP:
-      newState[action.user.id].joinedGroups.push(action.group.id);
+    if(action.user.id.group) {
+      newState[action.user.id].groups.push(action.group.id);
+    } else {
+      newState[action.group.id].group = [action.group.id];
+    }
       return newState;
     case RECEIVE_EVENT:
       return merge({}, state, {[action.user.id]: action.user});
