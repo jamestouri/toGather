@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  validates :title, :location, :body, :date_time presence: true
+  validates :title, :location, :body, :date_time, presence: true
 
   belongs_to :group
   belongs_to :user

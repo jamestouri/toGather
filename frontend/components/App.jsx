@@ -8,6 +8,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import NavContainer from './nav/nav_container';
 import Splash from './splash/splash';
 import GroupFindContainer from './group_find/group_find_container';
+import EventFormContainer from './event_form/event_form_container';
 
 import {
   Route,
@@ -26,6 +27,7 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
       <ProtectedRoute exact path="/create" component={GroupFormContainer}/>
+      <ProtectedRoute exact path="/events/new" component={EventFormContainer}/>
       <ProtectedRoute exact path="/find" component={GroupFindContainer}/>
       <Route path="/groups/:groupId" component={GroupShowContainer}/>
       <Route exact path="/" component={Splash}/>

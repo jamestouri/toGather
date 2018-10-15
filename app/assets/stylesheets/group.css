@@ -141,6 +141,15 @@
   padding-bottom: 8px;
 }
 
+.image-style-photo {
+  height:50px;
+  width: 55px;
+  padding-left: 16px;
+  padding-right: 25px;
+  padding-top: 0px;
+  padding-bottom: 8px;
+}
+
 .location-input-text ul {
   list-style-type: inherit;
 }

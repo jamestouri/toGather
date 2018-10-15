@@ -1,0 +1,21 @@
+.head-event-picture {
+  height: 251px;
+  width: auto;
+  font-family: Helvetica;
+  background-size:cover;
+  color: white;
+  text-shadow: #000 0 0 10px;
+  background-image: url(https://pilipinaspopcorn-6009.kxcdn.com/wp-content/uploads/2018/07/vishnu-r-nair-639172-unsplash-1240x540.jpg);
+}
+
+
+.head-event-picture h1 {
+  margin: 0;
+  padding-left: 40%;
+  padding-top: 7%;
+}
+
+.head-event-picture h4 {
+  padding-left: 42.4%;
+  padding-top: 15px;
+}

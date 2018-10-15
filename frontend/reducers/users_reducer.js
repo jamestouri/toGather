@@ -1,6 +1,8 @@
 import {RECEIVE_CURRENT_USER} from '../actions/session_actions';
 import {RECEIVE_GROUP} from '../actions/group_actions';
 import {RECEIVE_JOIN_GROUP} from '../actions/join_group_actions';
+import {RECEIVE_EVENT} from '../actions/event_actions';
+
 import merge from 'lodash/merge';
 
 const usersReducer = (state = {}, action) => {
@@ -13,6 +15,8 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_JOIN_GROUP:
       newState[action.user.id].joinedGroups.push(action.group.id);
       return newState;
+    case RECEIVE_EVENT:
+      return merge({}, state, {[action.user.id]: action.user});
     default:
       return state;
   }

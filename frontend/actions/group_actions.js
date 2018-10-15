@@ -10,11 +10,12 @@ const receiveGroups = payload => {
   }
 }
 
-const receiveGroup = ({group, user}) => {
+const receiveGroup = ({group, user, event}) => {
   return {
     type: RECEIVE_GROUP,
     group,
-    user
+    user,
+    event
   }
 }
 

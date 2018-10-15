@@ -24,7 +24,7 @@ const AboutGroupSection = ({group, user}) => {
         </div>
         <div className="upcoming-events">
           <Link className="event-button"
-            to={`/api/new_event`}>Create Event</Link>
+            to={`/events/new`}>Create Event</Link>
         </div>
       </div>
   )

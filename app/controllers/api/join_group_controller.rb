@@ -1,5 +1,4 @@
 class Api::JoinGroupController < ApplicationController
-
   def create
     @join_group = Join_Group.create(join_group_params)
   end

@@ -3,7 +3,6 @@ class Api::GroupsController < ApplicationController
   before_action only: [:create]
   def create
     @group = Group.new(group_params)
-    @group.user_id = current_user.id
     if @group.save
       render :show
     else

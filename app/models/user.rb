@@ -11,7 +11,6 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :Group
 
-  has_one_attached :image
 
 
   has_many :join_groups,
