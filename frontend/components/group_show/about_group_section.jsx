@@ -13,7 +13,9 @@ const AboutGroupSection = ({group, user}) => {
             <a href="#">See All</a>
           </div>
           <div className="organizer-box">
-            <img className="organizer-box-img" src="https://www.telecomtoday.com.au/wp-content/uploads/2016/06/unknown-testimonial.png"></img>
+            <img className="organizer-box-img"
+              src="https://www.telecomtoday.com.au/wp-content/uploads/2016/06/unknown-testimonial.png">
+            </img>
               <div className="header-owner-info-text">
                 <h5>Organized by</h5>
                 <h6>{user.first_name} {user.last_name}</h6>
