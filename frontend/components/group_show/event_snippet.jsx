@@ -26,7 +26,10 @@ class EventSnippet extends React.Component {
   render() {
     if(!this.props.events) {
       return null;
-    }
+
+  }
+
+
     const nextEvent = nextEvent();
     return (
       <div className="next-event-structure">

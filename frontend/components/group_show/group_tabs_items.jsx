@@ -12,12 +12,11 @@ class GroupTabsSelection extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     const data = {
       group_id: this.props.group.id,
       user_id: this.props.session,
     }
-    this.props.joinGroup(merge({}, data));
+    this.props.joinGroup(data);
   }
   render() {
     return (

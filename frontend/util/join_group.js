@@ -1,11 +1,9 @@
 
-
-
-export const joinGroup = join_group => {
+export const joinGroup = joinGroup => {
   return $.ajax({
     method: 'POST',
     url: '/api/join_groups',
-    data: {join_group}
+    data: joinGroup
   })
 }
 

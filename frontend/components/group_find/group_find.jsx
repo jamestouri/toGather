@@ -3,6 +3,10 @@ import { withRouter } from 'react-router-dom';
 
 class FindGroup extends React.Component {
 
+  componentDidMount() {
+    this.props.fetchGroups();
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -11,13 +15,16 @@ class FindGroup extends React.Component {
     }
 
   }
-
+  // for the top heading
   numberOf(events = 0, groups = 0) {
     return [events, groups];
   }
 
 
   render() {
+    if(!this.props.groups[0]) {
+      return null;
+    }
     return (
       <div>
         <div className="body-header">

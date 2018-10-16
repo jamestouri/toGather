@@ -8,12 +8,11 @@ import {selectEventsForGroup} from '../../reducers/selectors';
 const mapStateToProps = (state, ownProps) => {
   const group = state.entities.groups[ownProps.group.id];
   if(!group.events) {
-    return {group};
+    return {};
   }
   const events = selectEventsForGroup(state.entities, group);
   return {
-    group,
-    events,
+    events
   }
 }
 

@@ -3,5 +3,5 @@ export const selectGroup = ({groups}, groupId) => {
 }
 
 export const selectEventsForGroup = ({groups, events}, group) => {
-  return group.eventId.map(eventId => events[eventId]);
+  return group.events.map(eventId => events[eventId]);
 }

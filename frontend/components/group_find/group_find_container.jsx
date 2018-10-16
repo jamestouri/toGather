@@ -5,10 +5,8 @@ import { fetchGroups } from '../../actions/group_actions';
 
 
 const mapStateToProps = state => {
-    if(state.groups) {
-      return Object.values(state.groups);
-  } else {
-    return state;
+  return {
+    groups: Object.values(state.entities.groups),
   }
 }
 
