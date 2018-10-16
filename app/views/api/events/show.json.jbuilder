@@ -1,5 +1,5 @@
 json.event do
-  json.partial! '/api/events/event', group: @event
+  json.partial! '/api/events/event', event: @event
 end
 
 json.user do
@@ -7,5 +7,5 @@ json.user do
 end
 
 json.group do
-  json.partial! '/api/groups/group', user: @event.group
+  json.partial! '/api/groups/group', group: @event.group
 end

@@ -10,11 +10,12 @@ const receiveEvents = payload => {
   }
 }
 
-const receiveEvent = ({event, user}) => {
+const receiveEvent = ({event, user, group}) => {
   return {
     type: RECEIVE_EVENT,
     event,
-    user
+    user,
+    group
   }
 }
 
