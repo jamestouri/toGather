@@ -5,6 +5,8 @@ import EventSnippetContainer from './event_snippet_container';
 
 const AboutGroupSection = ({group, user}) => {
   return (
+
+
       <div className="about-section">
         <div className="event-snippet">
           <EventSnippetContainer group={group} user={user}/>
@@ -36,7 +38,12 @@ const AboutGroupSection = ({group, user}) => {
             }}
             >Create Event</Link>
         </div>
+        <div className="gray-background-structure">
       </div>
+      </div>
+
+
+
   )
 }
 

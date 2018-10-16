@@ -9,16 +9,15 @@ class EventSnippet extends React.Component {
   }
 
   nextEvent() {
-    let sortedEvents = [];
     this.props.events.sort(function(a, b) {
       a = new Date(a.date_time);
       b = new Date(b.date_time);
-      sortedEvents.append(a > b ? -1 : a < b ? 1 : 0);
+      return a > b ? -1 : a < b ? 1 : 0;
     });
     let nextEvents = [];
-    for (let i = 0; i < sortedEvents.length; i++) {
-      if (sortedEvents[i] - this.today){
-        return nextEvents;
+    for (let i = 0; i < this.props.events.length; i++) {
+      if (this.props.events[i] - this.today){
+        nextEvent.append(this.props.events[i]);
       }
     }
     return nextEvents[0];

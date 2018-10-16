@@ -3,10 +3,10 @@ import * as GroupAPIUtil from '../util/group_api_util';
 export const RECEIVE_GROUPS = 'RECEIVE_GROUPS';
 export const RECEIVE_GROUP = 'RECEIVE_GROUP';
 
-const receiveGroups = payload => {
+const receiveGroups = groups => {
   return {
     type: RECEIVE_GROUPS,
-    payload
+    groups
   }
 }
 
@@ -19,8 +19,8 @@ const receiveGroup = ({group, user, event}) => {
   }
 }
 
-export const fetchGroups = filter => dispatch => {
-  return GroupAPIUtil.fetchGroups(filter)
+export const fetchGroups = () => dispatch => {
+  return GroupAPIUtil.fetchGroups()
     .then(groups => dispatch(receiveGroups(groups)));
 };
 

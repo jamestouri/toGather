@@ -14,7 +14,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchGroups: index => dispatch(fetchGroups(index)),
+    fetchGroups: () => dispatch(fetchGroups()),
   }
 }
 

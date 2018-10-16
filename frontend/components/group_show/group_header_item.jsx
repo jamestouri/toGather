@@ -2,9 +2,8 @@ import React from 'react';
 
 const HavePhoto = ({group}) => {
   const style = {backgroundColor: 'rgb(236, 236, 236)'};
-  if (group.image.url !== undefined) {
-    const imageUrl = group.image.url;
-    style = {backgroundImage: `url(${imageUrl})`};
+  if (group.image_url !== undefined) {
+    return <img className="profile-picture"  src={group.image_url}/>
   }
   return (
       <div className="profile-picture" style={style}>

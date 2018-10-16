@@ -17,11 +17,11 @@ class EventForm extends React.Component {
         title: '',
         location: '',
         body: '',
-        date_time: '',
+        dateTime: '',
         imageFile: undefined,
         imageUrl: undefined,
-        user_id: props.user.id,
-        group_id: this.props.location.state.groupId
+        userId: props.user.id,
+        groupId: this.props.location.state.groupId
       }
       this.updateLocation = this.updateLocation.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -48,14 +48,16 @@ class EventForm extends React.Component {
       e.preventDefault();
       // const group = Object.assign({}, this.state);
       const formData = new FormData();
-      formData.append('group[title]', this.state.title);
-      formData.append('group[location]', this.state.location);
+      formData.append('event[title]', this.state.title);
+      formData.append('event[location]', this.state.location);
       // add our coordinates
-      formData.append('group[body]', this.state.body);
-      formData.append('group[category]', this.state.category);
+      formData.append('event[body]', this.state.body);
+      formData.append('event[date_time]', this.state.dateTime);
       if (this.state.imageFile) {
-        formData.append('group[image]', this.state.imageFile);
+        formData.append('event[image]', this.state.imageFile);
       }
+      formData.append('event[user_id]', this.state.userId);
+      formData.append('event[group_id]', this.state.groupId);
      this.props.createEvent(formData).then(() => this.props.history.push('/show'));
     }
 
@@ -67,7 +69,8 @@ class EventForm extends React.Component {
   };
 
 
-  visibility(question, scroll, givenButton) {
+  visibility(e, question, scroll, givenButton) {
+    e.preventDefault();
     let x = document.getElementById(question);
     x.classList.remove('hidden');
 
@@ -158,7 +161,7 @@ class EventForm extends React.Component {
          )}
          </PlacesAutocomplete>
 
-         <button id="buttonOne" onClick={()=>this.visibility('question-2', 'service', 'buttonOne')}>Next</button>
+         <button id="buttonOne" onClick={(e)=>this.visibility(e,'question-2', 'service', 'buttonOne')}>Next</button>
 
               </div>
             </div>
@@ -169,10 +172,10 @@ class EventForm extends React.Component {
                   <h6>STEP 2 OF 5</h6>
                   <h2>When will your Event Happen?</h2>
                   <input type="datetime-local"
-                    value={this.state.date_time}
-                    onChange={this.update('date_time')}
+                    value={this.state.dateTime}
+                    onChange={this.update('dateTime')}
                     />
-                  <button id="button-two" onClick={()=>this.visibility('question-3', 'naming', 'button-two')}>Next</button>
+                  <button id="button-two" onClick={(e)=>this.visibility(e, 'question-3', 'naming', 'button-two')}>Next</button>
                 </div>
               </div>
             </div>
@@ -188,7 +191,7 @@ class EventForm extends React.Component {
                     placeholder= "Example: Last Concert of the Year"
                     />
 
-                  <h2 className="input-textarea">Describe who should join, and what your Group will do</h2>
+                  <h2 className="input-textarea">Describe why your event is the place to be</h2>
                   <textarea value={this.state.body}
                     onChange={this.update('body')}
                     />
@@ -207,7 +210,7 @@ class EventForm extends React.Component {
                     onChange={this.handleFile.bind(this)}
                     />
 
-                  <button id="buttonFour" onClick={()=>this.visibility('question-5', 'terms', "buttonFour")}>Next</button>
+                  <button id="buttonFour" onClick={(e)=>this.visibility(e, 'question-5', 'terms', "buttonFour")}>Next</button>
                 </div>
               </div>
             </div>

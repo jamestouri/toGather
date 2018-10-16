@@ -40,7 +40,6 @@ class CreateGroup extends React.Component {
   }
 
   update(field) {
-    console.log(this.state);
     return(e) => {
       this.setState({[field]: e.target.value});
     }
@@ -59,7 +58,9 @@ class CreateGroup extends React.Component {
     if (this.state.imageFile) {
       formData.append('group[image]', this.state.imageFile);
     }
-   this.props.createGroup(formData).then(() => this.props.history.push('/show'));
+   this.props.createGroup(formData).then((action) => {
+     return this.props.history.push(`/groups/${action.group.id}`);
+   });
   }
 
 
@@ -73,7 +74,8 @@ class CreateGroup extends React.Component {
 
 
 
-  visibility(question, scroll, givenButton) {
+  visibility(e, question, scroll, givenButton) {
+    e.preventDefault();
     let x = document.getElementById(question);
     x.classList.remove('hidden');
 
@@ -163,7 +165,7 @@ class CreateGroup extends React.Component {
          )}
          </PlacesAutocomplete>
 
-         <button id="buttonOne" onClick={()=>this.visibility('question-2', 'service', 'buttonOne')}>Next</button>
+         <button id="buttonOne" onClick={(e)=>this.visibility(e, 'question-2', 'service', 'buttonOne')}>Next</button>
 
               </div>
             </div>
@@ -178,7 +180,7 @@ class CreateGroup extends React.Component {
                     onChange={this.update('category')}
                     placeholder= "Search for a Topic"
                     />
-                  <button id="button-two" onClick={()=>this.visibility('question-3', 'naming', 'button-two')}>Next</button>
+                  <button id="button-two" onClick={(e)=>this.visibility(e, 'question-3', 'naming', 'button-two')}>Next</button>
                 </div>
               </div>
             </div>
@@ -213,7 +215,7 @@ class CreateGroup extends React.Component {
                     onChange={this.handleFile.bind(this)}
                     />
 
-                  <button id="buttonFour" onClick={()=>this.visibility('question-5', 'terms', "buttonFour")}>Next</button>
+                  <button id="buttonFour" onClick={(e)=>this.visibility(e, 'question-5', 'terms', "buttonFour")}>Next</button>
                 </div>
               </div>
             </div>

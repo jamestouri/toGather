@@ -20,13 +20,6 @@ const groupsReducer = (state = {}, action) => {
         newState[action.group.id].events = [action.event.id];
       }
       return newState
-    case RECEIVE_JOIN_GROUP:
-      if(action.group.id.users) {
-        newState[action.group.id].users.push(action.user.id);
-      } else {
-        newState[action.group.id].users = [action.user.id];
-      }
-      return newState;
 
     default:
       return state;

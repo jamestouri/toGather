@@ -29,7 +29,7 @@
 .group-home-info-header {
   text-align: center;
   padding-left: 30px;
-  width: 337px;
+  width: 350px;
 }
 
 .group-home-info-header h1 {
@@ -50,7 +50,7 @@
 }
 
 .group-home-info-header-list li {
-  padding-right: 11px;
+  padding-right: 4px;
 
 
 }
@@ -175,10 +175,11 @@
 .about-section {
   background-color: #f6f7f8;
   text-align: left;
-  margin-right: 2%;
   margin-top: 25px;
   display: flex;
   justify-content: center;
+  margin-left: 70px;
+
 }
 
 
@@ -187,6 +188,14 @@
   font-weight: 550;
   padding-bottom: 10px;
 }
+
+.what-we-are p {
+  width: 600px;
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 
 .members-number {
   padding-top: 40px;
@@ -259,4 +268,13 @@
   cursor: pointer;
   text-decoration: none;
 
+}
+
+.gray-background-structure {
+  position: absolute;
+  background-color: #f6f7f8;
+  z-index: -2;
+  width: 1500px;
+  height: 100%;
+  top: 75%;
 }

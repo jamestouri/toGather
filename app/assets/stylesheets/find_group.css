@@ -2,10 +2,73 @@
   height: 169px;
   width: auto;
   background-color: #F64060;
-
+  font-family: Helvetica;
+  color: white;
 }
 
-.body-header h2 {
+.body-header-text {
   text-align: center;
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
 
+.body-header-text h2 {
+  padding-bottom: 8px;
+  font-size: 34px;
+  font-weight: 550;
+}
+
+.body-header-text h6 {
+  padding-top: 8px;
+  font-size: 16px;
+}
+
+.body-index {
+}
+
+.search-and-select-absolute {
+  position: absolute;
+  width: 960px;
+  height: 73px;
+  background-color: black;
+  top: 228px;
+  left: 18%;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.searchForm {
+  height: 45px;
+}
+
+.search-form-group {
+    width: 233px;
+    height: 45px;
+    margin-left: 12px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-size: 16px;
+    padding-left: 8px;
+    padding-right: 50px;
+}
+
+.search-form-button {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  top: 20%;
+  border: 1px solid transparent;
+  z-index: 3;
+  left:27%;
+  padding: 0;
+  font-size: 24px;
+  color: gray;
+  cursor: pointer;
+}
+
+.paragraph-section {
+  color: white;
 }

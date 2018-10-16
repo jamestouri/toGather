@@ -1,10 +1,10 @@
 
 
-export const fetchGroups = groups => {
+export const fetchGroups = () => {
   return $.ajax({
     method: 'GET',
-    url: 'api/groups',
-    data: {groups}
+    url: 'api/groups'
+
   });
 };
 
@@ -19,7 +19,7 @@ export const createGroup = group => {
   return $.ajax({
     method: 'POST',
     url: 'api/groups',
-    data: {group},
+    data: group,
     contentType: false,
     processData: false
   })
