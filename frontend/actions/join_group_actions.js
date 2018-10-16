@@ -21,7 +21,7 @@ const removeJoinGroup = id => {
 
 export const joinGroup = data => dispatch => {
   return JoinGroupAPIUtil.joinGroup(data)
-    .then(join_group => dispatch(receiveJoinGroup(join_group)));
+    .then(joinGroup => dispatch(receiveJoinGroup(joinGroup)));
 }
 
 

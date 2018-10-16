@@ -7,7 +7,7 @@ const joinGroupsReducer = (state = {}, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_JOIN_GROUP:
-      return merge(newState, {[action.joinGroup.id]: action.joinGroup});
+      return merge(newState, action.data);
     default:
       return state
   }

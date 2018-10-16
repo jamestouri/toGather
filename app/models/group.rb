@@ -11,5 +11,10 @@ class Group < ApplicationRecord
   has_many :join_groups,
   foreign_key: :group_id,
   class_name: :Join_Group
-  
+
+  has_many :events,
+  foreign_key: :group_id,
+  class_name: :Event
+
+
 end

@@ -10,12 +10,12 @@ const receiveGroups = groups => {
   }
 }
 
-const receiveGroup = ({group, user, event}) => {
+const receiveGroup = ({group, user, events}) => {
   return {
     type: RECEIVE_GROUP,
     group,
     user,
-    event
+    events
   }
 }
 

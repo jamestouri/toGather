@@ -16,6 +16,7 @@ class GroupTabsSelection extends React.Component {
       group_id: this.props.group.id,
       user_id: this.props.session,
     }
+    
     this.props.joinGroup(data);
   }
   render() {

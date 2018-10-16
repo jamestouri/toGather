@@ -1,5 +1,5 @@
 .next-event-structure {
-  width: 959px;
+  width: 880px;
   height: 465px;
 
 }
@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-left: -10px;
 }
 
 .next-event-mark h1 {
@@ -15,14 +16,19 @@
   margin: 0;
   padding-bottom: 20px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 550;
+
 }
 
 .next-event-mark h4 {
   text-align: right;
-  margin: 0;
+  margin-left: 0;
+  margin-right: -10px;
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: 16px;
   font-weight: 400;
+  color: #00a2c7;
 }
 
 .next-event-description {
@@ -31,26 +37,55 @@
   background-color: white;
   height: 418px;
   width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .next-event-calendar {
   height: 100%;
   width: 54px;
+  padding-top: 10px;
+  padding-left: 20px;
 }
+
+.next-event-calendar-box {
+  display: flex;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+}
+
+.next-event-calendar-box h3 {
+  font-size: 20px;
+  font-family: Helvetica;
+  font-weight: 550;
+  color: #f13a59;
+  padding-right: 4px;
+}
+
+.next-event-calendar-box h5{
+  font-size: 14px;
+  font-weight: 550;
+  color: rgba(46, 62, 72, 0.6);
+}
+
 
 .next-event-card {
   width: 395px;
-  padding-left: 15px;
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 .date-for-event-full {
   font-size: 14px;
   color: rgba(46, 62, 72, .6);
+  font-size: 15px;
 }
 
 .next-event-card h1 {
   font-size: 28px;
   font-weight: 600;
+  font-family: Helvetica;
 }
 
 .next-event-card-profile {

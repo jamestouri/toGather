@@ -40,6 +40,7 @@
 
 .searchForm {
   height: 45px;
+  width: 315px;
 }
 
 .search-form-group {
@@ -71,4 +72,53 @@
 
 .paragraph-section {
   color: white;
+}
+
+.filtering-section {
+  display: flex;
+  align-items:center;
+  font-size: 16px;
+  font-family: Helvetica;
+  width: 500px;
+}
+
+.paragraph-section {
+  font-weight: 500px;
+}
+
+
+
+.distance-filtering {
+  border-left: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: .5px solid white;
+  background-color: transparent;
+  color:white;
+  cursor: pointer;
+  font-size: 16px;
+  padding-bottom: 3px;
+  width: 90px;
+}
+
+.location-filtering {
+  width: 148px;
+  height: 25px;
+  border-left: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: .5px solid white;
+  background-color: transparent;
+  color:white;
+  cursor: pointer;
+  font-size: 16px;
+  padding-bottom: 3px;
+}
+
+.show-dropdown {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
 }

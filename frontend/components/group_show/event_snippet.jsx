@@ -6,31 +6,36 @@ class EventSnippet extends React.Component {
   constructor(props) {
     super(props)
     this.today = new Date();
+    this.state = {
+      events: this.props.events,
+    }
   }
 
   nextEvent() {
-    this.props.events.sort(function(a, b) {
+    this.state.events.sort(function(a, b) {
       a = new Date(a.date_time);
       b = new Date(b.date_time);
       return a > b ? -1 : a < b ? 1 : 0;
     });
     let nextEvents = [];
-    for (let i = 0; i < this.props.events.length; i++) {
-      if (this.props.events[i] - this.today){
-        nextEvent.append(this.props.events[i]);
+    for (let i = 0; i < this.state.events.length; i++) {
+      if (new Date(this.state.events[i].date_time) >= this.today){
+        nextEvents.push(this.state.events[i]);
       }
     }
-    return nextEvents[0];
+    return nextEvents[nextEvents.length - 1];
   }
 
   render() {
-    if(!this.props.events) {
+    if(this.state.events.length === 0) {
       return null;
 
   }
-
-
-    const nextEvent = nextEvent();
+    const nextEvent = this.nextEvent();
+    const date = new Date(nextEvent.date_time);
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ];
     return (
       <div className="next-event-structure">
         <div className="next-event-mark">
@@ -39,21 +44,25 @@ class EventSnippet extends React.Component {
         </div>
         <div className="next-event-description">
           <div className="next-event-calendar">
+            <div className="next-event-calendar-box">
+              <h3>{date.getDate()}</h3>
+              <h5>{monthNames[date.getMonth()]}</h5>
+            </div>
           </div>
 
           <div className="next-event-card">
-            <h4 className="date-for-event-full"></h4>
-            <h1></h1>
+            <h4 className="date-for-event-full">
+              {monthNames[date.getMonth()]} {date.getDate()}, at {date.getHours() % 12}:{date.getMinutes()}
+            </h4>
+            <h1>
+              {nextEvent.title}
+            </h1>
             <div className="next-event-card-profile">
               <p></p>
 
             </div>
           </div>
 
-          <div className="next-event-actions">
-
-            //button for rsvp
-          </div>
         </div>
       </div>
     )
