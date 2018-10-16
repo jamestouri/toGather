@@ -8,6 +8,7 @@ class EventSnippet extends React.Component {
     this.today = new Date();
     this.state = {
       events: this.props.events,
+      user: this.props.user
     }
   }
 
@@ -58,9 +59,17 @@ class EventSnippet extends React.Component {
               {nextEvent.title}
             </h1>
             <div className="next-event-card-profile">
-              <p></p>
+              <img className="host-event-picture" src="https://www.telecomtoday.com.au/wp-content/uploads/2016/06/unknown-testimonial.png"></img>
+
+              <div className="host-event-description">
+                <h3>Hosted by </h3>
+                <h4> {this.state.user.first_name} {this.state.user.last_name}</h4>
+              </div>
 
             </div>
+              <div className="event-description-body">
+                {nextEvent.body}
+              </div>
           </div>
 
         </div>

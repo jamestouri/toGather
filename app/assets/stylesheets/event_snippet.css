@@ -44,15 +44,15 @@
 .next-event-calendar {
   height: 100%;
   width: 54px;
-  padding-top: 10px;
-  padding-left: 20px;
+  padding-top: 30px;
+  padding-left: 30px;
 }
 
 .next-event-calendar-box {
-  display: flex;
-  align-items: center;
   width: 54px;
   height: 54px;
+  text-align: center;
+
 }
 
 .next-event-calendar-box h3 {
@@ -93,9 +93,34 @@
   justify-content: flex-start;
 }
 
+.host-event-picture {
+  height: 40px;
+  width: 59px;
+  margin-left: -10px;
+}
+
 .next-event-actions {
   margin-left: 20px;
   margin-top: 20px;
   width: 278px;
   height: 300px;
+}
+
+.host-event-description {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.host-event-description h4 {
+  padding-left: 6px;
+  color: #00a2c7;
+}
+
+.event-description-body {
+  line-height: 1.6;
+  font-size: 14px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
