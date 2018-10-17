@@ -57,7 +57,7 @@ class EventForm extends React.Component {
       }
       formData.append('event[user_id]', this.state.userId);
       formData.append('event[group_id]', this.state.groupId);
-      this.props.createEvent(formData).then(() => this.props.history.push(`groups/${this.state.groupId}`));
+      this.props.createEvent(formData).then(() => this.props.history.push(`/`));
     }
 
   handleSelect(address) {

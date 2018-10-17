@@ -10,6 +10,8 @@ const receiveEvents = payload => {
   }
 }
 
+
+
 const receiveEvent = ({event, user, group}) => {
   return {
     type: RECEIVE_EVENT,
@@ -18,6 +20,8 @@ const receiveEvent = ({event, user, group}) => {
     group
   }
 }
+
+
 
 export const fetchEvents = filter => dispatch => {
   return EventAPIUtil.fetchEvents(filter)

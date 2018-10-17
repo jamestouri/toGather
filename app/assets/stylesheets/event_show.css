@@ -1,0 +1,49 @@
+.show-event-top {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  width: 1100px;
+  height: 215px;
+}
+
+.link-button-for-group {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #00a2c7;
+  text-decoration: none;
+}
+
+.link-button-for-group:hover {
+
+  text-decoration:underline;
+}
+
+.going-or-not {
+  margin-top: 10px;
+  height: 110px;
+  border-bottom: 0.5px solid #e0e0e0;
+
+}
+
+.stubborn-h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-family: Helvetica;
+}
+
+.list-of-shares-for-event ul{
+  display: flex;
+  justify-content: space-around;
+  margin-left: -12px;
+  padding-left: 0;
+  margin-top: 40px;
+}
+
+.list-of-shares-for-event {
+  border-bottom: 0.5px solid #e0e0e0;
+}
+
+.share-word-event {
+  font-weight: 550px;
+}
