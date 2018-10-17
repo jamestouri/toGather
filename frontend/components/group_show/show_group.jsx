@@ -16,6 +16,7 @@ class ShowGroup extends React.Component {
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.groupId)
     this.props.fetchJoinGroup(this.props.match.params.groupId)
+    window.scrollTo(0, 0)
   }
 
 

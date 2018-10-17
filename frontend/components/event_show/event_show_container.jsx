@@ -7,8 +7,12 @@ import { fetchEvent } from '../../actions/event_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const event = state.entities.events[ownProps.match.params.eventId];
-
-  return {event}
+  if (!event) {
+    return {event}
+  }
+  const group = state.entities.groups[event.group_id];
+  const user = state.entities.users[event.user_id];
+  return {event, group, user}
 }
 
 

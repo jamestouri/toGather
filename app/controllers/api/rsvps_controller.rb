@@ -3,7 +3,10 @@ class Api::RsvpsController < ApplicationController
   def create
     @rsvp = Rsvp.new(@rsvp_params)
     if @rsvp.save
-      render :show
+      render :show, status: 200
+    else
+      render json: @rsvp.errors.full_messages, status: 404
+
     end
   end
 

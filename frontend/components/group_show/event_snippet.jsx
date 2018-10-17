@@ -42,7 +42,7 @@ class EventSnippet extends React.Component {
     ];
     return (
       <div className="next-event-structure">
-        <Link to={`api/events/${nextEvent.id}`} className="entire-snippet-button"></Link>
+        <Link to={`/events/${nextEvent.id}`} className="entire-snippet-button"></Link>
         <div className="next-event-mark">
           <h1>Next Event</h1>
           <h4>See all</h4>

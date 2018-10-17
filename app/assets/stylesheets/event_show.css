@@ -12,10 +12,11 @@
 }
 
 .link-button-for-group {
-  margin-top: 12px;
+  margin-top: 16px;
   font-size: 14px;
   color: #00a2c7;
   text-decoration: none;
+  margin-bottom: 16px;
 }
 
 .link-button-for-group:hover {
@@ -29,6 +30,7 @@
   border-bottom: 0.5px solid #e0e0e0;
 
 }
+
 
 .stubborn-h2 {
   font-size: 20px;
@@ -79,10 +81,19 @@
 
 .event-description {
   margin-top: 35px;
+  max-width: 588px;
+
+}
+
+.next-event-card-show {
+  display: flex;
+  justify-content: flex-start;
+  height: 55px;
 }
 
 .event-description p {
   padding-top: 20px;
+  line-height: 1.6;
 }
 
 .gray-background-event {
@@ -94,4 +105,9 @@
   height: 800px;
   left: 0;
   border-top: 1px solid #e0e0e0;
+}
+
+.event-show-profile Link{
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

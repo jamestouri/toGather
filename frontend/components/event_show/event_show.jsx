@@ -1,10 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import GoogleMap from 'google-distance-matrix';
 
 
 class EventShow extends React.Component {
   componentDidMount() {
     this.props.fetchEvent(this.props.match.params.eventId);
+    window.scrollTo(0, 0)
   }
   constructor(props) {
     super(props)
@@ -24,7 +26,6 @@ class EventShow extends React.Component {
     "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
     ];
-
     return (
       <div className='show-structure'>
         <div className="show-event-top">
@@ -41,10 +42,11 @@ class EventShow extends React.Component {
             <h1>
               {this.props.event.title}
             </h1>
-            <div className="next-event-card-profile">
+            <div className="next-event-card-show">
               <img className="host-event-picture" src="https://www.telecomtoday.com.au/wp-content/uploads/2016/06/unknown-testimonial.png"></img>
-                <div>
-                  <Link className="link-button-for-group"to={`api/${this.props.event.group_id}`}>Back to Group Page</Link>
+                <div className="event-show-profile">
+                  <p className="public-group-text">Hosted by {this.props.user.first_name}</p>
+                  <Link className="link-button-for-group"to={`api/groups/${this.props.event.group_id}`}>Back to {this.props.group.title}</Link>
                   <p className="public-group-text">Public group</p>
                 </div>
             </div>
