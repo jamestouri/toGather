@@ -11,6 +11,9 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :Group
 
+  has_many :rsvps,
+  foreign_key: :user_id,
+  class_name: :Rsvp
 
 
   has_many :join_groups,
