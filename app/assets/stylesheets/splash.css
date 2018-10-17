@@ -14,7 +14,8 @@
   display: inline-block;
   color: black;
   padding-top: 15%;
-  background-image: url(https://nationalinterest.org/sites/default/files/styles/resize-1440/public/main_images/nasa_space_walk.jpg?itok=CrRaVysg);
+  /* background-image: url(https://nationalinterest.org/sites/default/files/styles/resize-1440/public/main_images/nasa_space_walk.jpg?itok=CrRaVysg); */
+  background-image: url(https://i.gifer.com/147h.gif);
   background-size: cover;
   color: white;
 }

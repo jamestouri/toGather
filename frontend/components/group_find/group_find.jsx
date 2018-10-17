@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import GroupFindItem from './group_find_item';
 
 class FindGroup extends React.Component {
 
@@ -40,13 +41,24 @@ class FindGroup extends React.Component {
 
   }
 
+  getGroups() {
+    const groups = this.props.groups.map((group) => {
+      return (<GroupFindItem
+        key={group.id}
+        group={group}
+        />
+    )
+    })
+    return groups;
+  }
 
   render() {
     if(!this.props.groups[0]) {
       return null;
     }
+
     return (
-      <div>
+      <div className="group-page">
         <div className="body-header">
           <div className="body-header-text">
             <h2>Find a Group</h2>
@@ -76,6 +88,14 @@ class FindGroup extends React.Component {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="bottom-part">
+          <div className="list-of-groups">
+            <h3>ALL GROUPS</h3>
+            <ul>
+              {this.getGroups()}
+            </ul>
           </div>
         </div>
       </div>

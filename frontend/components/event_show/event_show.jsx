@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import GoogleMap from 'google-distance-matrix';
 
 
 class EventShow extends React.Component {
@@ -26,6 +25,8 @@ class EventShow extends React.Component {
     "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
     ];
+
+
     return (
       <div className='show-structure'>
         <div className="show-event-top">
