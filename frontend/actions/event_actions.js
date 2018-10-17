@@ -3,10 +3,10 @@ import * as EventAPIUtil from '../util/event_util';
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 
-const receiveEvents = payload => {
+const receiveEvents = events => {
   return {
     type: RECEIVE_EVENTS,
-    payload
+    events
   }
 }
 
@@ -23,8 +23,8 @@ const receiveEvent = ({event, user, group}) => {
 
 
 
-export const fetchEvents = filter => dispatch => {
-  return EventAPIUtil.fetchEvents(filter)
+export const fetchEvents = () => dispatch => {
+  return EventAPIUtil.fetchEvents()
     .then(events => dispatch(receiveEvents(events)));
 };
 

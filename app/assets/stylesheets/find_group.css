@@ -81,10 +81,23 @@
   font-size: 16px;
   font-family: Helvetica;
   width: 500px;
+
 }
 
 .paragraph-section {
   font-weight: 500px;
+}
+
+.go-to-events {
+  position: absolute;
+  right: 35px;
+  top: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+.go-to-events:hover{
+  text-decoration: underline;
 }
 
 .distance-filtering {
@@ -169,4 +182,10 @@
   font-weight: 600;
   text-align: left;
   margin-bottom: 20px;
+}
+
+.list-of-groups ul {
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }

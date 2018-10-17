@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import GroupFindItem from './group_find_item';
 
 class FindGroup extends React.Component {
@@ -62,7 +62,7 @@ class FindGroup extends React.Component {
         <div className="body-header">
           <div className="body-header-text">
             <h2>Find a Group</h2>
-            <h6>in your groups · nearby</h6>
+            <h6>{this.props.groups.length} groups</h6>
           </div>
         </div>
         <div className="body-index">
@@ -76,6 +76,9 @@ class FindGroup extends React.Component {
                   <p className="paragraph-section">
                     within  <button onClick={this.getDropdown} className="distance-filtering">{this.state.distance} miles</button>  of  <button className="location-filtering">{this.state.location}</button>
                 </p>
+                <div className="right-side-line">
+                  <Link className="go-to-events" to={`/events/find`}>Find Events</Link>
+                </div>
               </div>
               <div id="my-dropdown" className="dropdown-content">
                 <ul className="list-of-dropdown">

@@ -1,9 +1,8 @@
 
-export const fetchEvents = events => {
+export const fetchEvents = () => {
   return $.ajax({
     method: 'GET',
-    url: 'api/events',
-    data: {events}
+    url: 'api/events'
   });
 };
 

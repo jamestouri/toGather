@@ -9,6 +9,7 @@ import NavContainer from './nav/nav_container';
 import Splash from './splash/splash';
 import GroupFindContainer from './group_find/group_find_container';
 import EventFormContainer from './event_form/event_form_container';
+import EventFindContainer from './event_find/event_find_container';
 
 import {
   Route,
@@ -29,6 +30,7 @@ const App = () => (
       <ProtectedRoute exact path="/create" component={GroupFormContainer}/>
       <ProtectedRoute exact path="/events/new" component={EventFormContainer}/>
       <ProtectedRoute exact path="/find" component={GroupFindContainer}/>
+      <ProtectedRoute exact path="/events/find" component={EventFindContainer}/>
       <Route path="/groups/:groupId" component={GroupShowContainer}/>
       <Route path="/events/:eventId" component={EventShowContainer}/>
       <Route exact path="/" component={Splash}/>

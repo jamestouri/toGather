@@ -7,7 +7,7 @@ const eventsReducer = (state = {}, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_EVENTS:
-      return merge(newState, action.events);
+      return action.events;
     case RECEIVE_EVENT:
       return merge(newState, {[action.event.id] : action.event});
     case RECEIVE_GROUP:

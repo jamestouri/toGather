@@ -11,6 +11,7 @@ class Api::EventsController < ApplicationController
 
   def index
     @events = Event.all
+    render :real_index
   end
 
   def show
