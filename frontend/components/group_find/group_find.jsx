@@ -17,10 +17,6 @@ class FindGroup extends React.Component {
     this.getDropdown = this.getDropdown.bind(this);
 
   }
-  // for the top heading
-  numberOf(events = 0, groups = 0) {
-    return [events, groups];
-  }
 
   getDropdown() {
     document.getElementById('my-dropdown').classList.toggle('show-dropdown');

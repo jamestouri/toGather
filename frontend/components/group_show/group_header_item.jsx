@@ -12,7 +12,10 @@ const HavePhoto = ({group}) => {
 }
 
 
+
 const GroupHomeHeader = ({group, user}) => {
+
+
   return (
     <div className="group-home-header">
         <HavePhoto group={group} />

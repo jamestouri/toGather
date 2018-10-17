@@ -4,6 +4,7 @@ import EventSnippetContainer from './event_snippet_container';
 // Add Event part here
 
 const AboutGroupSection = ({group, user}) => {
+  
   return (
       <div className="about-section">
         <div className="event-snippet">

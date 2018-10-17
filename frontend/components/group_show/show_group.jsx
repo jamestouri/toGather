@@ -14,6 +14,7 @@ class ShowGroup extends React.Component {
   }
 
   componentDidMount() {
+
     this.props.fetchGroup(this.props.match.params.groupId)
     this.props.fetchJoinGroup(this.props.match.params.groupId)
     window.scrollTo(0, 0)
@@ -22,8 +23,13 @@ class ShowGroup extends React.Component {
 
 
   render() {
+
     if(!this.props.group) {
       return null
+    }
+
+    if (!this.props.user) {
+      return null;
     }
     return (
     <div className="show-group-structure">

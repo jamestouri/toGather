@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users[group.user_id];
   const session_user = state.session.id;
   const joinedGroup = hasJoinGroup(group.id, session_user, state.entities.joinGroups)
+  ;
 
   return {group, user, session_user, joinedGroup};
 
