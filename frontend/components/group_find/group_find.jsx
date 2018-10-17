@@ -13,6 +13,7 @@ class FindGroup extends React.Component {
       distance: 2,
       location: 'San Francisco, CA'
     }
+    this.getDropdown = this.getDropdown.bind(this);
 
   }
   // for the top heading
@@ -22,6 +23,7 @@ class FindGroup extends React.Component {
 
   getDropdown() {
     document.getElementById('my-dropdown').classList.toggle('show-dropdown');
+    document.getElementById('my-dropdown').classList.remove('dropdown-content');
   }
 
   updateDistance(field) {
@@ -30,8 +32,9 @@ class FindGroup extends React.Component {
       this.setState({[field]: e.target.value});
 
       let distance = document.getElementById('my-dropdown');
-      if (distance.classList.contains('show-dropped')) {
-        distance.classList.remove('show-dropped')
+      if (distance.classList.contains('show-dropdown')) {
+        distance.classList.remove('show-dropdown')
+        distance.classList.toggle('dropdown-content')
       }
     }
 
@@ -59,17 +62,17 @@ class FindGroup extends React.Component {
             <div className="filtering-with-dropdown">
                 <div className="filtering-section">
                   <p className="paragraph-section">
-                    within  <button className="distance-filtering">{this.state.distance} miles</button>  of  <button className="location-filtering">{this.state.location}</button>
+                    within  <button onClick={this.getDropdown} className="distance-filtering">{this.state.distance} miles</button>  of  <button className="location-filtering">{this.state.location}</button>
                 </p>
               </div>
               <div id="my-dropdown" className="dropdown-content">
-                <ul>
-                  <li><input onClick={this.updateDistance('distance')} type="submit" value="2"/></li>
-                  <li><input onClick={this.updateDistance('distance')} type='submit' value="5"/></li>
-                  <li><input onClick={this.updateDistance('distance')} type='submit' value="10"/></li>
-                  <li><input onClick={this.updateDistance('distance')} type='submit' value="25"/></li>
-                  <li><input onClick={this.updateDistance('distance')} type='submit' value="50"/></li>
-                  <li><input onClick={this.updateDistance('distance')} type='submit' value="200"/></li>
+                <ul className="list-of-dropdown">
+                  <li><input onClick={this.updateDistance('distance')} type="submit" value="2"/>miles</li>
+                  <li><input onClick={this.updateDistance('distance')} type='submit' value="5"/>miles</li>
+                  <li><input onClick={this.updateDistance('distance')} type='submit' value="10"/>miles</li>
+                  <li><input onClick={this.updateDistance('distance')} type='submit' value="25"/>miles</li>
+                  <li><input onClick={this.updateDistance('distance')} type='submit' value="50"/>miles</li>
+                  <li><input onClick={this.updateDistance('distance')} type='submit' value="200"/>miles</li>
                 </ul>
               </div>
             </div>

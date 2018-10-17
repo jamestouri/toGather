@@ -7,10 +7,23 @@ export const joinGroup = join_group => {
   })
 }
 
+export const fetchJoinGroups = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/join_groups',
+  })
+}
 
 export const leaveGroup = () => {
   return $.ajax({
     method: 'DELETE',
     url: '/api/join_groups'
+  })
+}
+
+export const fetchJoinGroup = id => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/join_groups/${id}`,
   })
 }

@@ -8,5 +8,5 @@ export default combineReducers({
   users: usersReducer,
   groups: groupsReducer,
   events: eventsReducer,
-  joinGroup: joinGroupsReducer,
+  joinGroups: joinGroupsReducer,
 });

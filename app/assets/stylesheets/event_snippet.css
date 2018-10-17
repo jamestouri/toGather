@@ -4,6 +4,15 @@
 
 }
 
+.entire-snippet-button {
+  position: absolute;
+  width: 880px;
+  height: 465px;
+  z-index: 2;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .next-event-mark {
   display: flex;
   justify-content: space-between;
@@ -123,4 +132,43 @@
   font-size: 14px;
   padding-top: 20px;
   padding-bottom: 20px;
+  max-height: 87px;
+}
+.next-event-media {
+  margin-top: 20px;
+  width: 385px;
+  text-align: right;
+
+}
+
+.next-event-media h5{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #2e3e48;
+  margin-left: 17%;
+}
+
+
+.image-photo-snippet {
+  width: 300px;
+  height: 180px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.attend-button {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
+  width: 300px;
+  border-radius: 4px;
+  background-color: rgb(241, 58, 89);
+  color: white;
+  margin-top: 20px;
+  font-weight: 550;
+  height: 45px;
 }

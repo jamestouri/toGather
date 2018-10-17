@@ -75,6 +75,7 @@
 }
 
 .filtering-section {
+  margin-top: 25px;
   display: flex;
   align-items:center;
   font-size: 16px;
@@ -117,8 +118,41 @@
 
 .show-dropdown {
   display: block;
+  margin-left: 8%;
+  width: 100px;
+  box-shadow: 1px 1px 1px gray;
 }
+
+.show-dropdown ul {
+  width: 100px;
+  height: 140px;
+  background-color: white;
+  z-index: 1;
+  border: 1px solid transparent;
+  text-align: center;
+  padding-left: 0;
+
+}
+
+.list-of-dropdown li input{
+  font-size: 16px;
+  font-family: Helvetica;
+  border: 1px solid transparent;
+}
+
+.list-of-dropdown li:hover{
+  cursor: pointer;
+  background-color: red;
+  text-align: center;
+}
+
+.list-of-dropdown li input:hover{
+  cursor: pointer;
+  background-color: red;
+}
+
 
 .dropdown-content {
   display: none;
+  z-index: 1;
 }

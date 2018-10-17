@@ -16,9 +16,30 @@ class GroupTabsSelection extends React.Component {
       group_id: this.props.group.id,
       user_id: this.props.session,
     }
-    
+
     this.props.joinGroup(data);
   }
+
+  haveNotJoin() {
+    if(this.props.joinedGroup) {
+      return (
+          <form onSubmit={this.handleSubmit}>
+          <input type="submit"
+            className="group-tabs-button-joined-already"
+            value= "Already joined!"></input>
+        </form>
+      )
+    } else {
+      return (
+        <form onSubmit={this.handleSubmit}>
+          <input type="submit"
+            className="group-tabs-button"
+            value= "Join this Group"></input>
+        </form>
+      )
+    }
+  }
+
   render() {
     return (
       <div className="group-tabs">
@@ -30,11 +51,7 @@ class GroupTabsSelection extends React.Component {
           <li>Discussions</li>
           <li>More</li>
         </ul>
-        <form onSubmit={this.handleSubmit}>
-          <input type="submit"
-            className="group-tabs-button"
-            value= "Join this Group"></input>
-        </form>
+        {this.haveNotJoin()}
       </div>
     )
   }

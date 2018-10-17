@@ -33,12 +33,16 @@ class EventSnippet extends React.Component {
 
   }
     const nextEvent = this.nextEvent();
+    if (nextEvent === undefined) {
+      return null;
+    }
     const date = new Date(nextEvent.date_time);
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     ];
     return (
       <div className="next-event-structure">
+        <Link to={`api/events/${nextEvent.id}`} className="entire-snippet-button"></Link>
         <div className="next-event-mark">
           <h1>Next Event</h1>
           <h4>See all</h4>
@@ -71,7 +75,11 @@ class EventSnippet extends React.Component {
                 {nextEvent.body}
               </div>
           </div>
-
+          <div className="next-event-media">
+            <img className="image-photo-snippet" src={nextEvent.image_url}></img>
+            <button className="attend-button">Attend</button>
+            <h5>{nextEvent.location}</h5>
+          </div>
         </div>
       </div>
     )

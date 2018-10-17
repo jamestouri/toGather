@@ -15,6 +15,7 @@ class ShowGroup extends React.Component {
 
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.groupId)
+    this.props.fetchJoinGroup(this.props.match.params.groupId)
   }
 
 
@@ -34,6 +35,7 @@ class ShowGroup extends React.Component {
       <GroupTabsSelection
         session={this.props.session_user}
         group={this.props.group}
+        joinedGroup = {this.props.joinedGroup}
         />
       <AboutGroupSection
             group={this.props.group}

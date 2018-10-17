@@ -6,11 +6,20 @@ class Api::JoinGroupsController < ApplicationController
     else
       render json: @join_group.errors.full_messages, status: 404
     end
+  end
 
+  def index
+    @join_groups = Join_Group.all
   end
 
   def destroy
 
+  end
+
+  def show
+    @join_group = Join_Group.find_by({user_id: current_user.id, group_id: params[:id]})
+
+    render :show
   end
 
   private
