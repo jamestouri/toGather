@@ -70,6 +70,7 @@
   font-weight: 550;
   color: #f13a59;
   padding-right: 4px;
+
 }
 
 .next-event-calendar-box h5{
@@ -171,4 +172,8 @@
   margin-top: 20px;
   font-weight: 550;
   height: 45px;
+}
+.public-group-text {
+  font-size: 14px;
+  
 }

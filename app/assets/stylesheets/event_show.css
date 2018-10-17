@@ -1,3 +1,8 @@
+.show-structure {
+  height: 1000px;
+  margin-left: 8%
+}
+
 .show-event-top {
   margin: 20px;
   display: flex;
@@ -19,7 +24,7 @@
 }
 
 .going-or-not {
-  margin-top: 10px;
+  margin-top: 27px;
   height: 110px;
   border-bottom: 0.5px solid #e0e0e0;
 
@@ -40,10 +45,53 @@
   margin-top: 40px;
 }
 
+.next-event-show-page-calendar {
+  background-color: #f6f7f8;
+}
+
 .list-of-shares-for-event {
   border-bottom: 0.5px solid #e0e0e0;
 }
 
 .share-word-event {
   font-weight: 550px;
+}
+
+.event-image-cover {
+  width: 586px;
+  height: 350px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.event-show-for-image {
+  margin-left: 19%;
+  text-align: left;
+  margin-top: 40px;
+  font-family: Helvetica;
+}
+
+.event-show-for-image h2 {
+  font-size: 24px;
+  font-weight: 550;
+
+}
+
+.event-description {
+  margin-top: 35px;
+}
+
+.event-description p {
+  padding-top: 20px;
+}
+
+.gray-background-event {
+  background-color: #f6f7f8;
+  position: absolute;
+  top: 340px;
+  z-index: -2;
+  width: 1440px;
+  height: 800px;
+  left: 0;
+  border-top: 1px solid #e0e0e0;
 }
