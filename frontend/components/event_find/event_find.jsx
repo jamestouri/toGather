@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-
+import EventItem from './event_item';
 
 class FindEvent extends React.Component {
   constructor(props) {
@@ -52,41 +52,44 @@ class FindEvent extends React.Component {
     return nextEvents;
   }
   // If date is the same don't return a date text
-  dateChecker(eventOne, eventTwo) {
-    const monthNames = ["January", "Febuary", "March",
-    "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-    ];
-    const dateOne = new Date(eventOne.date_time);
-    const dateTwo = new Date(eventTwo.date_time);
-    if (dateTwo !== dateOne) {
-      return (
-        <div>
-          <div>`${monthNames[dateTwo.getMonth()]} ${dateTwo.getDate()}, ${dateTwo.getFullYear()}`</div>
-          <div>{eventTwo}</div>
-        </div>
-
-      )
-    } else {
-      return (
-        <div>{eventTwo}</div>
-      )
-    }
-  }
 
   // list of events
   eventFindBuildOut(sortedEvents) {
-    for (let i = sortedEvents.length - 1; i > 0; i--) {
-      return (
-        <li>{this.dateChecker(sortedEvents[i - 1], sortedEvents[0])}</li>
-      )
-    }
+      let events = []
+      const monthNames = ["January", "Febuary", "March",
+      "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+      ];
+      let currentDate = '';
+      for (let i = sortedEvents.length - 1; i > 0; i--) {
+        const date = new Date(sortedEvents[i].date_time);
+        const dateLook = `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+        if(currentDate !== dateLook) {
+          events.push(<li>
+            <div className="date-for-event">{dateLook}</div>
+              <EventItem
+                key={sortedEvents[i].id}
+                event={sortedEvents[i]}
+                />
+          </li>)
+          currentDate = dateLook;
+        } else {
+          events.push(<li>
+            <EventItem
+              key={sortedEvents[i].id}
+              event={sortedEvents[i]}
+              />
+          </li>)
+        }
+      }
+    return events;
   }
 
   render() {
     if(!this.props.events[0]) {
       return null;
     }
+
     const sortedEvents = this.nextEvents()
 
 
@@ -126,10 +129,11 @@ class FindEvent extends React.Component {
               </div>
             </div>
           </div>
-          <ul>
+          <ul className='list-of-all-events'>
             {this.eventFindBuildOut(sortedEvents)}
           </ul>
         </div>
+        <div className='gray-background-event-find'></div>
       </div>
     )
   }
