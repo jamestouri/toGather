@@ -21,6 +21,10 @@
   background-color: white;
   margin-bottom: 10px;
 }
+.event-find-item-explain:hover {
+  transform: translateY(-0.25em);
+}
+
 
 .event-item-click {
   cursor: pointer;
