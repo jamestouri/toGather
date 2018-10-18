@@ -35,10 +35,16 @@ body = ["San Francisco has something for everyone. Foodies should grab a burrito
 
 event_location = ['Pasadena College', 'McDonalds on Market', 'The Moon', 'Earth at C-137', 'Dagobah System', 'Levi Stadium', 'Shoreline Amphitheatre']
 
-date_and_time = ['Wed, 10 Oct 2018 01:24:00 UTC +00:00', 'Fri, 9 Nov 2018 08:24:00 UTC +00:00', 'Tue, 4 Dec 2018 14:24:00 UTC +00:00', 'Tue, 19 Feb 2019 16:24:00 UTC +00:00', 'Wed, 5 Jun 2019 7:24:00 UTC +00:00', 'Mon, 3 Dec 2018 14:24:00 UTC +00:00', 'Mon, 12 Aug 2019 18:24:00 UTC +00:00']
+date_and_time = [DateTime.new(2019, 7, 29, 14, 35, 0), DateTime.new(2018, 12, 29, 7, 35, 0), DateTime.new(2019, 10, 21, 4, 35, 0), DateTime.new(2019, 5, 29, 8, 35, 0),
+  DateTime.new(2020, 2, 29, 9, 35, 0), DateTime.new(2019, 1, 29, 5, 35, 0), DateTime.new(2021, 7, 29, 14, 35, 0)]
+  (0...55).each do |i|
+    event = Event.create(title: event_titles[rando.rand(0...event_titles.length)],
+    location: event_location[rando.rand(0..6)],
+    body: body[rando.rand(0..6)],
+    group_id: groups[rando.rand(0...groups.length)].id,
+    date_time: date_and_time[rando.rand(0...date_and_time.length)],
+    user_id: users[rando.rand(0...users.length)].id)
 
-(0...55).each do |i|
-  event = Event.create(title: event_titles[rando.rand(0...event_titles.length)], location: event_location[rando.rand(0..6)], body: body[rando.rand(0..6)], group_id: groups[rando.rand(0...groups.length)], date_time: date_and_time[rando.rand(0...date_and_time.length)], user_id: users[rando.rand(0...users.length)])
-  file = File.open("app/assets/images/events/#{rando.rand(0..11).to_s}.jpg")
-  event.image.attach(io: file, filename: "#{i.to_s}.jpg")
-end
+    file = File.open("app/assets/images/events/#{rando.rand(0..11).to_s}.jpg")
+    event.image.attach(io: file, filename: "#{i.to_s}.jpg")
+  end
