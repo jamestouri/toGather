@@ -22,14 +22,10 @@ const loggedIn = ({currentUser, logout, location}) => {
 }
 
 const Nav = ({currentUser, logout, location}) => {
-  let mainDirect = '/';
-  if(currentUser) {
-    mainDirect = '/find';
-  }
   return(
     <nav className="nav-structure">
       <div>
-      <Link to={mainDirect}><img className="logo-image" src="https://secure.meetupstatic.com/s/img/5455565085016210254/logo/svg/logo--script.svg"/></Link>
+      <Link to={'/'}><img className="logo-image" src="https://secure.meetupstatic.com/s/img/5455565085016210254/logo/svg/logo--script.svg"/></Link>
       </div>
 
         {loggedIn({currentUser, logout, location})}

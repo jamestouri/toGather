@@ -104,7 +104,6 @@ class EventShow extends React.Component {
               <p>{this.props.event.body}</p>
             </div>
           </div>
-          {this.props.event.date_time}
         </div>
         <div className="gray-background-event">
         </div>
