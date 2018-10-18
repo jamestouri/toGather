@@ -92,8 +92,6 @@ class FindEvent extends React.Component {
 
     const sortedEvents = this.nextEvents()
 
-
-
     return (
       <div className="event-page">
         <div className="body-header">

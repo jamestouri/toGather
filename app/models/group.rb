@@ -14,7 +14,8 @@ class Group < ApplicationRecord
 
   has_many :events,
   foreign_key: :group_id,
-  class_name: :Event
+  class_name: :Event,
+  dependent: :destroy
 
 
 end

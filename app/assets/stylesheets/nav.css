@@ -53,6 +53,8 @@
   background-color: transparent;
   padding-left: 0;
   margin-bottom: 5%;
+  cursor: pointer;
+  margin-top: 0;
 }
 
 .logout-text:hover {

@@ -50,7 +50,6 @@ class ShowGroup extends React.Component {
             group = {this.props.group}
             user = {this.props.user}
             />
-
       <GroupTabsSelection
         session={this.props.session_user}
         group={this.props.group}
