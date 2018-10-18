@@ -70,7 +70,7 @@ date_and_time = ['Wed, 10 Oct 2018 01:24:00 UTC +00:00', 'Fri, 9 Nov 2018 08:24:
 
 50.times do
   i = 0
-  event = Event.create(title: event_title[random_number], location: event_location[random_number], body: body[random_number], group_id: groups[random_group], user_id: users[random_number], date_time: date_and_time[random_number])
+  event = Event.create(title: event_titles[random_number], location: event_location[random_number], body: body[random_number], group_id: groups[random_group], user_id: users[random_number], date_time: date_and_time[random_number])
   file = File.open("app/assets/images/events/#{random_number_str}.jpg")
   event.image.attact(io: file, filename: "#{i.to_s}.jpg")
   i += 1
