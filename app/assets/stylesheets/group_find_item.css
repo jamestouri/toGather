@@ -13,7 +13,7 @@
 
 
 .group-find-item h1 {
-  /* text-decoration: none; */
+  text-decoration: none;
   color: white;
   font-size: 20px;
   font-weight: 500;
@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-.group-find-item Link {
+.group-find-item a {
   width: 305px;
   height: 182px;
   cursor: pointer;

@@ -9,6 +9,7 @@ class FindEvent extends React.Component {
       distance: 2,
       location: 'San Francisco, CA'
     }
+    this.today = new Date();
     this.getDropdown = this.getDropdown.bind(this);
 
   }
@@ -35,13 +36,61 @@ class FindEvent extends React.Component {
     }
 
   }
+  // sort the events
+  nextEvents() {
+    this.props.events.sort(function(a, b) {
+      a = new Date(a.date_time);
+      b = new Date(b.date_time);
+      return a > b ? -1 : a < b ? 1 : 0;
+    });
+    let nextEvents = [];
+    for (let i = 0; i < this.props.events.length; i++) {
+      if (new Date(this.props.events[i].date_time) >= this.today){
+        nextEvents.push(this.props.events[i]);
+      }
+    }
+    return nextEvents;
+  }
+  // If date is the same don't return a date text
+  dateChecker(eventOne, eventTwo) {
+    const monthNames = ["January", "Febuary", "March",
+    "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+    ];
+    const dateOne = new Date(eventOne.date_time);
+    const dateTwo = new Date(eventTwo.date_time);
+    if (dateTwo !== dateOne) {
+      return (
+        <div>
+          <div>`${monthNames[dateTwo.getMonth()]} ${dateTwo.getDate()}, ${dateTwo.getFullYear()}`</div>
+          <div>{eventTwo}</div>
+        </div>
 
-  
+      )
+    } else {
+      return (
+        <div>{eventTwo}</div>
+      )
+    }
+  }
+
+  // list of events
+  eventFindBuildOut(sortedEvents) {
+    for (let i = sortedEvents.length - 1; i > 0; i--) {
+      return (
+        <li>{this.dateChecker(sortedEvents[i - 1], sortedEvents[0])}</li>
+      )
+    }
+  }
 
   render() {
     if(!this.props.events[0]) {
       return null;
     }
+    const sortedEvents = this.nextEvents()
+
+
+
     return (
       <div className="event-page">
         <div className="body-header">
@@ -77,6 +126,9 @@ class FindEvent extends React.Component {
               </div>
             </div>
           </div>
+          <ul>
+            {this.eventFindBuildOut(sortedEvents)}
+          </ul>
         </div>
       </div>
     )
