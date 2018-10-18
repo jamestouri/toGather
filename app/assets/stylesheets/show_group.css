@@ -299,3 +299,18 @@
   height: 140%;
   top: 75%;
 }
+
+
+.delete-button {
+  font-size: 16px;
+  margin-top: 25px;
+  border: 1px solid transparent;
+  color: gray;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.delete-button:hover {
+  color: red;
+
+}

@@ -40,6 +40,7 @@ class CreateGroup extends React.Component {
   }
 
   update(field) {
+    console.log(this.state);
     return(e) => {
       this.setState({[field]: e.target.value});
     }

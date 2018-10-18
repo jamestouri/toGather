@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import ShowGroup from './show_group';
-import { fetchGroup } from '../../actions/group_actions';
+import { fetchGroup, deleteGroup } from '../../actions/group_actions';
 import { hasJoinGroup } from '../../reducers/selectors';
 import { fetchJoinGroups, fetchJoinGroup } from '../../actions/join_group_actions';
 
@@ -24,6 +24,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchGroup: id => dispatch(fetchGroup(id)),
     fetchJoinGroup: id => dispatch(fetchJoinGroup(id)),
+    deleteGroup: id => dispatch(deleteGroup(id)),
   }
 };
 

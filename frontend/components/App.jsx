@@ -10,7 +10,7 @@ import Splash from './splash/splash';
 import GroupFindContainer from './group_find/group_find_container';
 import EventFormContainer from './event_form/event_form_container';
 import EventFindContainer from './event_find/event_find_container';
-
+import Footer from './footer/footer';
 import {
   Route,
   Link,
@@ -37,7 +37,7 @@ const App = () => (
       <Redirect to={'/'} />
     </Switch>
     <footer>
-
+      <Footer />
     </footer>
    </div>
 );

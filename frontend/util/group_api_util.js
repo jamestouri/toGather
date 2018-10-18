@@ -23,3 +23,18 @@ export const createGroup = group => {
     processData: false
   })
 }
+
+export const deleteGroup = id => (
+  $.ajax({
+    url: `api/groups/${id}`,
+    method: 'DELETE'
+  })
+);
+
+export const updateGroup = group => (
+  $.ajax({
+    url: `api/groups/${group.id}`,
+    method: 'PATCH',
+    data: { group }
+  })
+);

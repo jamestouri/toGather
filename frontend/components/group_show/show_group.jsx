@@ -20,6 +20,18 @@ class ShowGroup extends React.Component {
     window.scrollTo(0, 0)
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteGroup(this.props.group.id).then(() => this.props.history.push(`/find`));
+  }
+
+  deleteButton() {
+    if (this.props.user.id === this.props.session_user) {
+      return (
+          <button className="delete-button" onClick={(e) => this.handleDelete(e)}>Delete Group</button>
+      )
+    }
+  }
 
 
   render() {
@@ -46,9 +58,11 @@ class ShowGroup extends React.Component {
         />
       <AboutGroupSection
             group={this.props.group}
-            user = {this.props.user}/>
-    </div>
+            user = {this.props.user}
+      />
+      {this.deleteButton()}
 
+    </div>
     )
   }
 }

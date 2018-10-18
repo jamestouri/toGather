@@ -1,5 +1,6 @@
 import {RECEIVE_GROUPS,
-        RECEIVE_GROUP
+        RECEIVE_GROUP,
+        REMOVE_GROUP
       } from '../actions/group_actions';
 import {RECEIVE_EVENT} from '../actions/event_actions';
 
@@ -23,8 +24,9 @@ const groupsReducer = (state = {}, action) => {
         newState[action.group.id].events = [action.event.id];
       }
       return newState
-
-      return merge(newState, {[action.group.id] : action.group});
+    case REMOVE_GROUP:
+      delete newState[action.id];
+      return newState;
     default:
       return state;
   }

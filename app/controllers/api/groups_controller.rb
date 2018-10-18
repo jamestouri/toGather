@@ -20,9 +20,24 @@ class Api::GroupsController < ApplicationController
   end
 
   def destroy
-
+    @group = Group.find(params[:id])
+    if @group.destroy
+      render :show
+    else
+      render @group.errors.full_messages, status: 404
+    end
   end
 
+  def update
+    @group = Group.find(params[:id])
+
+    if @group.update(group_params)
+      render :show
+    else
+      render json: @group.errors.full_messages, status: 422
+    end
+  end
+  
   private
 
   def group_params
