@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import {connect} from 'react-redux';
 
 class EventShow extends React.Component {
   componentDidMount() {
@@ -9,7 +9,36 @@ class EventShow extends React.Component {
   }
   constructor(props) {
     super(props)
+    this.handleSubmit = this.handleSubmit.bind(this);
 
+  }
+
+  haveNotJoin() {
+    if(this.props.rsvpEvent) {
+      return (
+          <button onSubmit={this.handleSubmit}
+            className="group-tabs-button-joined-already">
+            RSVP'd!
+        </button>
+      )
+    } else {
+      return (
+        <button onClick={this.handleSubmit}
+          className='attend-button-for-event'>
+          Going!</button>
+
+      )
+    }
+  }
+
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const data = {
+      event_id: this.props.event.id,
+      user_id: this.props.session_user,
+    }
+    this.props.rsvp(data);
   }
 
   render() {
@@ -47,7 +76,7 @@ class EventShow extends React.Component {
               <img className="host-event-picture" src="https://www.telecomtoday.com.au/wp-content/uploads/2016/06/unknown-testimonial.png"></img>
                 <div className="event-show-profile">
                   <p className="public-group-text">Hosted by {this.props.user.first_name}</p>
-                  <Link className="link-button-for-group"to={`api/groups/${this.props.event.group_id}`}>Back to {this.props.group.title}</Link>
+                  <Link className="link-button-for-group"to={`/groups/${this.props.event.group_id}`}>Back to {this.props.group.title}</Link>
                   <p className="public-group-text">Public group</p>
                 </div>
             </div>
@@ -55,7 +84,7 @@ class EventShow extends React.Component {
           </div>
           <div className='going-or-not'>
             <h2 className="stubborn-h2">Are you going?</h2>
-            <button className="attend-button">Going!</button>
+              {this.haveNotJoin()}
               <div className="list-of-shares-for-event">
                 <ul>
                   <li className="share-word-event">Share:</li>
@@ -83,6 +112,7 @@ class EventShow extends React.Component {
     )
   }
 }
+
 
 
 export default EventShow;

@@ -1,6 +1,6 @@
 @rsvps.each do |rsvp|
-  json.set! join_group.id do
+  json.set! rsvp.id do
     json.userId rsvp.user_id
-    json.groupId rsvp.group_id
+    json.eventId rsvp.event_id
   end
 end

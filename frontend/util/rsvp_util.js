@@ -1,5 +1,5 @@
 
-export const joinRsvp = rsvp => {
+export const rsvp = rsvp => {
   return $.ajax({
     method: 'POST',
     url: `/api/rsvps`,

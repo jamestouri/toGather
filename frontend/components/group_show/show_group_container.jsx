@@ -18,8 +18,6 @@ const mapStateToProps = (state, ownProps) => {
   ;
 
   return {group, user, session_user, joinedGroup};
-
-
 };
 
 const mapDispatchToProps = dispatch => {

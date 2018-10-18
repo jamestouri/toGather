@@ -79,6 +79,22 @@
 
 }
 
+.attend-button-for-event {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
+  width: 300px;
+  border-radius: 4px;
+  background-color: rgb(241, 58, 89);
+  color: white;
+  margin-top: 20px;
+  font-weight: 550;
+  height: 45px;
+  cursor: pointer;
+}
+
 .event-description {
   margin-top: 35px;
   max-width: 588px;
