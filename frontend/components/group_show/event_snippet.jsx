@@ -40,6 +40,14 @@ class EventSnippet extends React.Component {
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     ];
+    let min = date.getMinutes();
+    if(date.getMinutes() < 10) {
+      min = `0${min}`
+    }
+    let ap = 'AM';
+    if(date.getHours() > 11) {
+       ap = 'PM';
+    }
     return (
       <div className="next-event-structure">
         <Link to={`/events/${nextEvent.id}`} className="entire-snippet-button"></Link>
@@ -57,7 +65,7 @@ class EventSnippet extends React.Component {
 
           <div className="next-event-card">
             <h4 className="date-for-event-full">
-              {monthNames[date.getMonth()]} {date.getDate()}, at {date.getHours() % 12}:{date.getMinutes()}
+              {monthNames[date.getMonth()]} {date.getDate()}, at {date.getHours() % 12}:{min}{ap}
             </h4>
             <h1>
               {nextEvent.title}
