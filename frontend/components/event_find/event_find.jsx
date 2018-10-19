@@ -7,12 +7,20 @@ class FindEvent extends React.Component {
     super(props);
     this.state = {
       distance: 2,
-      location: 'San Francisco, CA'
+      location: 'San Francisco, CA',
+      search: ''
     }
     this.today = new Date();
     this.getDropdown = this.getDropdown.bind(this);
 
   }
+
+  update(field) {
+    return(e) => {
+      this.setState({[field]: e.target.value});
+    }
+  }
+
 
   componentDidMount() {
     this.props.fetchEvents();
@@ -64,22 +72,25 @@ class FindEvent extends React.Component {
       for (let i = sortedEvents.length - 1; i > 0; i--) {
         const date = new Date(sortedEvents[i].date_time);
         const dateLook = `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
-        if(currentDate !== dateLook) {
-          events.push(<li>
-            <div className="date-for-event">{dateLook}</div>
+        const lowerCase = (sortedEvents[i].title).toLowerCase();
+        if(lowerCase.includes((this.state.search).toLowerCase())) {
+          if(currentDate !== dateLook) {
+            events.push(<li>
+              <div className="date-for-event">{dateLook}</div>
+                <EventItem
+                  key={sortedEvents[i].id}
+                  event={sortedEvents[i]}
+                  />
+            </li>)
+            currentDate = dateLook;
+          } else {
+            events.push(<li>
               <EventItem
                 key={sortedEvents[i].id}
                 event={sortedEvents[i]}
                 />
-          </li>)
-          currentDate = dateLook;
-        } else {
-          events.push(<li>
-            <EventItem
-              key={sortedEvents[i].id}
-              event={sortedEvents[i]}
-              />
-          </li>)
+            </li>)
+          }
         }
       }
     return events;
@@ -91,7 +102,6 @@ class FindEvent extends React.Component {
     }
 
     const sortedEvents = this.nextEvents()
-
     return (
       <div className="event-page">
         <div className="body-header">
@@ -103,7 +113,11 @@ class FindEvent extends React.Component {
         <div className="body-index">
           <div className="search-and-select-absolute">
             <form className="searchForm">
-              <input className="search-form-group" placeholder="Search Group"/>
+              <input className="search-form-group"
+                placeholder="Search Event"
+                value={this.state.search}
+                onChange={this.update('search')}
+                />
               <input className="search-form-button" type="submit" value="✓"/>
             </form>
             <div className="filtering-with-dropdown">

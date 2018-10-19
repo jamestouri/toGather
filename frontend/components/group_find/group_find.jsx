@@ -12,7 +12,8 @@ class FindGroup extends React.Component {
     super(props);
     this.state = {
       distance: 2,
-      location: 'San Francisco, CA'
+      location: 'San Francisco, CA',
+      search: ''
     }
     this.getDropdown = this.getDropdown.bind(this);
 
@@ -37,13 +38,22 @@ class FindGroup extends React.Component {
 
   }
 
+  update(field) {
+    return(e) => {
+      this.setState({[field]: e.target.value});
+    }
+  }
+
   getGroups() {
     const groups = this.props.groups.map((group) => {
-      return (<GroupFindItem
-        key={group.id}
-        group={group}
-        />
-    )
+      let lowerCase = (group.title).toLowerCase();
+      if (lowerCase.includes((this.state.search).toLowerCase())) {
+        return (<GroupFindItem
+          key={group.id}
+          group={group}
+          />
+        )
+      }
     })
     return groups;
   }
@@ -64,7 +74,11 @@ class FindGroup extends React.Component {
         <div className="body-index">
           <div className="search-and-select-absolute">
             <form className="searchForm">
-              <input className="search-form-group" placeholder="Search Group"/>
+              <input className="search-form-group"
+                placeholder="Search Group"
+                value={this.state.search}
+                onChange={this.update('search')}
+                />
               <input className="search-form-button" type="submit" value="✓"/>
             </form>
             <div className="filtering-with-dropdown">
