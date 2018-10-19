@@ -13,7 +13,7 @@
 - Users can create Events
 - Users can join Groups
 - Only the owner of the Group can delete the Group
-- Users can find other groups and events of interest
+- Users can find other groups and events of interest using Search
 
 CRUD Functionality will be done for the group where it can be created, read, updated, and deleted:
 
