@@ -8,7 +8,12 @@
 
 ## Features
 
-Users can create/delete Groups and Events
+- Secure frontend to backend user authentication using BCrypt
+- Users can create Groups
+- Users can create Events
+- Users can join Groups
+- Only the owner of the Group can delete the Group
+- Users can find other groups and events of interest
 
 CRUD Functionality will be done for the group where it can be created, read, updated, and deleted:
 
