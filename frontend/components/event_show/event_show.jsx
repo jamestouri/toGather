@@ -42,7 +42,7 @@ class EventShow extends React.Component {
   }
 
   render() {
-    if(!this.props.event) {
+    if(!this.props.user) {
       return null;
     }
     const date = new Date(this.props.event.date_time);

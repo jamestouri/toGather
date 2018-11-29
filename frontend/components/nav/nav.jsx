@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const loggedIn = ({currentUser, logout, location}) => {
+  
   if (currentUser) {
     return (
       <ul className="list-build-out">
