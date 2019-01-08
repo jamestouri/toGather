@@ -5,6 +5,15 @@
 
 [Link to my Site](https://togathering.herokuapp.com)
 
+## Setup locally 
+- Clone repository 
+- Bundle Install 
+- Run `rails s` on command line to start server 
+- Input `npm install` to install dependencies 
+- Run `npm start` to run frontend 
+- In application.html.erb file, implement unique Google Maps key on the `<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}&libraries=places" %>` line.
+If not interested in Google autocomplete simply comment-out/remove the line.
+- Launch in browser in localhost:3000
 
 ## Features
 
